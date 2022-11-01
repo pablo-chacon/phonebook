@@ -31,4 +31,50 @@ public class Application {
                             contact.getPhoneNo()).print();
     }
 
+    /*
+    PrintOut main menu to the console
+    ask for input from the user
+
+    -if(input = 1)
+            Printout userGuest options in the console
+            Ask for input from the user
+
+                    if(input = 1)
+            Create - att lägga till nya profiler i telefonboken
+                    else-if(input = 2)
+            Read - att söka efter profiler i telefonboken givet olika sökningar
+            ask input from user
+
+                        if(input = 1)
+            Sökning på förnamn - ger alla profiler med det sökta förnamnet.
+                        else-if(input = 2)
+            Sökning på efternamn - ger profilen som först matchar med sökningen
+                        else-if(input = 3)
+            Sökning på adress - ger alla profiler på samma gatunamn.
+                    else-if(input = 4)
+            Fri sökning - ger alla profiler med någon relaterbar kontaktinformation
+
+
+      -else-if(input = 2)
+            enter Password
+            printout user admin options in the console
+            ask for input from the user
+
+            if(input = 1)
+                Create - att lägga till nya profiler i telefonboken
+            else-if(input = 2)
+                Read - att söka efter profiler i telefonboken givet olika sökningar
+            else-if(input = 3)
+                Update - att kunna uppdatera en profils kontaktuppgifter
+            else-if(input = 4)
+                Delete - att kunna ta bort en profil
+
+      -else-if(input = 3)
+            end program
+     */
+
+
+
+
+
 }
