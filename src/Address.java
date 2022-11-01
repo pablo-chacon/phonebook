@@ -1,4 +1,4 @@
-public class Address extends Contact  {
+public class Address {
 
     public String streetAddress;
     public String zipCode;
@@ -8,8 +8,7 @@ public class Address extends Contact  {
 
     }
 
-    public Address(String firstName, String lastName, int age, String address, String phoneNo, String streetAddress, String zipCode, String county) {
-        super(firstName, lastName, age, address, phoneNo);
+    public Address(String streetAddress, String zipCode, String county) {
         this.streetAddress = streetAddress;
         this.zipCode = zipCode;
         this.county = county;
@@ -37,5 +36,10 @@ public class Address extends Contact  {
 
     public void setCounty(String county) {
         this.county = county;
+    }
+
+
+    public String addressData(String streetAddress, String county, String zipCode) {
+        return getStreetAddress() + " County: " + getCounty() + " Zip: " + getZipCode() + " ";
     }
 }
