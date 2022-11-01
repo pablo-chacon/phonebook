@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b31fd342-1753-4026-85db-b01b218bf389" name="Changes" comment="mainMenu">
+    <list default="true" id="b31fd342-1753-4026-85db-b01b218bf389" name="Changes" comment="gagag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hogaboga.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,14 +34,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,6 +54,8 @@
       <workItem from="1667295401868" duration="116000" />
       <workItem from="1667295661206" duration="852000" />
       <workItem from="1667298199944" duration="1162000" />
+      <workItem from="1667305624293" duration="1426000" />
+      <workItem from="1667316965670" duration="1463000" />
     </task>
     <task id="LOCAL-00001" summary="mainMenu">
       <created>1667298952064</created>
@@ -74,7 +78,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667299336730</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="hogaboga">
+      <created>1667304730062</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667304730062</updated>
+    </task>
+    <task id="LOCAL-00005" summary="gagag">
+      <created>1667304853142</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1667304853142</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +111,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="mainMenu" />
-    <option name="LAST_COMMIT_MESSAGE" value="mainMenu" />
+    <MESSAGE value="hogaboga" />
+    <MESSAGE value="gagag" />
+    <option name="LAST_COMMIT_MESSAGE" value="gagag" />
   </component>
 </project>

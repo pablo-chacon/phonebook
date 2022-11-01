@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
 
-        System.out.println("Hogaboga");
-
 //        Contact contact = new Contact();
 //        Scanner sc = new Scanner(System.in);
 //
@@ -32,14 +30,24 @@ public class Application {
 //                            String.valueOf(contact.getAge()), contact.getAddress(),
 //                            contact.getPhoneNo()).print();
 
-    mainMenu();
+        boolean isRunning = true;
+        PrintOut printOut = new PrintOut();
+
+        while (isRunning){
+
+            printOut.MainMenu();
+            String userInput = askUserForInput();
+
+            if (userInput.equals("1")){
+                printOut.guestUserOptions();
+            } else if (userInput.equals("2")){
+
+            } else if (userInput.equals("3")) {
+
+            }
+
+        }
     }
-
-
-
-//    ask for input from the user
-//
-//    -if(input = 1)
 //            Printout userGuest options in the console
 //            Ask for input from the user
 //
@@ -76,12 +84,15 @@ public class Application {
 //      -else-if(input = 3)
 //            end program
 
-    static public void mainMenu(){
-        System.out.println("""
-                [1] log in as Admin
-                [2] log in as Guest
-                """);
+
+    static public String askUserForInput(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input: ");
+        return sc.nextLine();
     }
+
+
+
 
 
 
