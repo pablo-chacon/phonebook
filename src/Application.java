@@ -21,6 +21,7 @@ public class Application {
 
         System.out.println("phone");
         contact.setPhoneNo(sc.next());
+        System.out.println("Hogaboga");
 
 
         new ContactDB()
@@ -72,6 +73,7 @@ public class Application {
       -else-if(input = 3)
             end program
      */
+
 
 
 
