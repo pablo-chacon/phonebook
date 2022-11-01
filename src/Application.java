@@ -31,17 +31,16 @@ public class Application {
 //                            contact.getPhoneNo()).print();
 
         boolean isRunning = true;
-        PrintOut printOut = new PrintOut();
+
 
         while (isRunning){
-
-            printOut.MainMenu();
+            printOutMainMenu();
             String userInput = askUserForInput();
 
             if (userInput.equals("1")){
-                printOut.guestUserOptions();
+                printOutAdminOptions();
             } else if (userInput.equals("2")){
-
+               printOutGuestOptions();
             } else if (userInput.equals("3")) {
 
             }
@@ -85,10 +84,35 @@ public class Application {
 //            end program
 
 
+    static public void printOutMainMenu(){
+        System.out.println("""
+                what do you prefer login as
+                [1] Admin
+                [2] Guest
+                """);
+    }
     static public String askUserForInput(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Input: ");
         return sc.nextLine();
+    }
+
+    static public void printOutAdminOptions(){
+        System.out.println("""
+                [1] Create contact
+                [2] Read contact
+                [3] Update contact
+                [4] Delete contact
+                [5] Go back
+                """);
+    }
+
+    static public void printOutGuestOptions(){
+        System.out.println("""
+                [1] Create contact
+                [2] Read contact
+                [3] Go back
+                """);
     }
 
 
