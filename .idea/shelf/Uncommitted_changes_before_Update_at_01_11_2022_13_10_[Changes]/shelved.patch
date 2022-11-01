@@ -1,0 +1,64 @@
+Index: src/Application.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Scanner;\r\n\r\npublic class Application {\r\n    public static void main(String[] args) {\r\n\r\n\r\n//        Contact contact = new Contact();\r\n//        Scanner sc = new Scanner(System.in);\r\n//\r\n//        System.out.println(\"first\");\r\n//        contact.setFirstName(sc.next());\r\n//\r\n//        System.out.println(\"Last\");\r\n//        contact.setLastName(sc.next());\r\n//\r\n//        System.out.println(\"Age\");\r\n//        contact.setAge(sc.nextInt());\r\n//\r\n//        System.out.println(\"Address\");\r\n//        contact.setAddress(sc.next());\r\n//\r\n//        System.out.println(\"phone\");\r\n//        contact.setPhoneNo(sc.next());\r\n//        System.out.println(\"Hogaboga\");\r\n//\r\n//\r\n//        new ContactDB()\r\n//                .addContact(\"First name\", \"Last name\", \"Age\", \"Address\", \"Phone\")\r\n//                .addContact(\r\n//                        contact.getFirstName(), contact.getLastName(),\r\n//                            String.valueOf(contact.getAge()), contact.getAddress(),\r\n//                            contact.getPhoneNo()).print();\r\n\r\n    mainMenu();\r\n    }\r\n\r\n\r\n\r\n//    ask for input from the user\r\n//\r\n//    -if(input = 1)\r\n//            Printout userGuest options in the console\r\n//            Ask for input from the user\r\n//\r\n//                    if(input = 1)\r\n//            Create - att lägga till nya profiler i telefonboken\r\n//                    else-if(input = 2)\r\n//            Read - att söka efter profiler i telefonboken givet olika sökningar\r\n//            ask input from user\r\n//\r\n//                        if(input = 1)\r\n//            Sökning på förnamn - ger alla profiler med det sökta förnamnet.\r\n//                        else-if(input = 2)\r\n//            Sökning på efternamn - ger profilen som först matchar med sökningen\r\n//                        else-if(input = 3)\r\n//            Sökning på adress - ger alla profiler på samma gatunamn.\r\n//                    else-if(input = 4)\r\n//            Fri sökning - ger alla profiler med någon relaterbar kontaktinformation\r\n//\r\n//\r\n//      -else-if(input = 2)\r\n//            enter Password\r\n//            printout user admin options in the console\r\n//            ask for input from the user\r\n//\r\n//            if(input = 1)\r\n//                Create - att lägga till nya profiler i telefonboken\r\n//            else-if(input = 2)\r\n//                Read - att söka efter profiler i telefonboken givet olika sökningar\r\n//            else-if(input = 3)\r\n//                Update - att kunna uppdatera en profils kontaktuppgifter\r\n//            else-if(input = 4)\r\n//                Delete - att kunna ta bort en profil\r\n//\r\n//      -else-if(input = 3)\r\n//            end program\r\n\r\n    static public void mainMenu(){\r\n        System.out.println(\"\"\"\r\n                [1] log in as Admin\r\n                [2] log in as Guest\r\n                \"\"\");\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Application.java b/src/Application.java
+--- a/src/Application.java	(revision 8277dff2d615189aa5f0733497a70f07800a25c6)
++++ b/src/Application.java	(date 1667304633906)
+@@ -3,6 +3,7 @@
+ public class Application {
+     public static void main(String[] args) {
+ 
++        System.out.println("Hogaboga");
+ 
+ //        Contact contact = new Contact();
+ //        Scanner sc = new Scanner(System.in);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b31fd342-1753-4026-85db-b01b218bf389\" name=\"Changes\" comment=\"mainMenu\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2GtvLj4k8Weg17udbYHsBeYFD6a\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b31fd342-1753-4026-85db-b01b218bf389\" name=\"Changes\" comment=\"\" />\r\n      <created>1667220644072</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1667220644072</updated>\r\n      <workItem from=\"1667295401868\" duration=\"116000\" />\r\n      <workItem from=\"1667295661206\" duration=\"852000\" />\r\n      <workItem from=\"1667298199944\" duration=\"1162000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"mainMenu\">\r\n      <created>1667298952064</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667298952064</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"mainMenu\">\r\n      <created>1667299286765</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667299286765</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"mainMenu\">\r\n      <created>1667299336730</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1667299336730</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"mainMenu\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"mainMenu\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8277dff2d615189aa5f0733497a70f07800a25c6)
++++ b/.idea/workspace.xml	(date 1667300127224)
+@@ -1,7 +1,9 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="b31fd342-1753-4026-85db-b01b218bf389" name="Changes" comment="mainMenu" />
++    <list default="true" id="b31fd342-1753-4026-85db-b01b218bf389" name="Changes" comment="mainMenu">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -48,6 +50,8 @@
+       <workItem from="1667295401868" duration="116000" />
+       <workItem from="1667295661206" duration="852000" />
+       <workItem from="1667298199944" duration="1162000" />
++      <workItem from="1667299393176" duration="639000" />
++      <workItem from="1667300038691" duration="88000" />
+     </task>
+     <task id="LOCAL-00001" summary="mainMenu">
+       <created>1667298952064</created>
+@@ -70,7 +74,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1667299336730</updated>
+     </task>
+-    <option name="localTasksCounter" value="4" />
++    <task id="LOCAL-00004" summary="mainMenu">
++      <created>1667299413756</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1667299413756</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
