@@ -67,7 +67,7 @@ public class ContactDB implements Crud {
 
     @Override
     public void readContact() {
-
+        contact.get(contact.size());
     }
 
     @Override
