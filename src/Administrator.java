@@ -5,9 +5,15 @@ public class Administrator implements Crud {
     private boolean isLoggedIn;
 
     public Administrator(String userName, String password, Boolean isLoggedIn) {
+<<<<<<< HEAD
         this.userName = userName;
         this.password = password;
         this.isLoggedIn = isLoggedIn;
+=======
+    this.userName = userName;
+    this.password = password;
+    this.isLoggedIn = isLoggedIn;
+>>>>>>> origin/master
     }
 
     public String getUserName() {

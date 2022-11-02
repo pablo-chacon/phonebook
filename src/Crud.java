@@ -1,11 +1,11 @@
 public interface Crud {
 
-    void createProfile();
+void createProfile();
 
-    void readProfile();
+void readProfile();
 
-    void updateProfile();
+void updateProfile();
 
-    void deleteProfile();
+void deleteProfile();
 
 }
