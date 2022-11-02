@@ -1,3 +1,5 @@
+package contactDB;
+
 public class Address {
 
     public String streetAddress;
