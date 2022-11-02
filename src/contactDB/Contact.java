@@ -1,13 +1,13 @@
 package contactDB;
 
-
-public class Contact {
+public abstract class Contact extends ContactDB {
 
     private String firstName;
     private String lastName;
     private int age;
     private String address;
     private String phoneNo;
+
 
     public Contact() {
     }
@@ -16,7 +16,6 @@ public class Contact {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.address = address;
         this.phoneNo = phoneNo;
     }
 
@@ -44,13 +43,7 @@ public class Contact {
         this.age = age;
     }
 
-    public String getAddress() {
-        return address;
-    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     public String getPhoneNo() {
         return phoneNo;
@@ -60,6 +53,5 @@ public class Contact {
         this.phoneNo = phoneNo;
     }
 
+    public abstract String addressData();
 }
-
-

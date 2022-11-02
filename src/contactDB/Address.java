@@ -3,15 +3,15 @@ package contactDB;
 public class Address extends Contact {
 
     public String streetAddress;
-    public String streetNum;
-    public String zipCode;
     public String county;
+    public String zipCode;
+
 
     public Address() {
 
     }
 
-    public Address(String streetAddress, String streetNum, String zipCode, String county) {
+    public Address(String streetAddress, String zipCode, String county) {
         this.streetAddress = streetAddress;
         this.zipCode = zipCode;
         this.county = county;
@@ -23,14 +23,6 @@ public class Address extends Contact {
 
     public void setStreetAddress(String streetAddress) {
         this.streetAddress = streetAddress;
-    }
-
-    public String getStreetNum() {
-        return streetNum;
-    }
-
-    public void setStreetNum(String streetNum) {
-        this.streetNum = streetNum;
     }
 
     public String getZipCode() {
@@ -50,7 +42,8 @@ public class Address extends Contact {
     }
 
 
-    public String addressData(String streetAddress, String county, String zipCode) {
-        return getStreetAddress() + " " + getStreetNum() + " County: " + getCounty() + " Zip: " + getZipCode() + " ";
+    @Override
+    public String addressData() {
+        return "Street: " + getStreetAddress() + "\n\t\t\t\t\t\t\t\t County: " + getCounty() + "\n\t\t\t\t\t\t\t\t Zip: " + getZipCode() + " ";
     }
 }

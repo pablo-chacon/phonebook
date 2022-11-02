@@ -3,8 +3,9 @@ package contactDB;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
-public class ContactDB implements Crud {
+public class ContactDB  {
 
     List<List<String>> contact = new ArrayList<>();
     List<Integer> maxLengths = new ArrayList<>();
@@ -31,8 +32,13 @@ public class ContactDB implements Crud {
         return this;
     }
 
-    public void print(){
+    public void contactAddress() {
+        new Address();
+
+    }
+    public Map<? extends Contact, ? extends Address> print(){
         System.out.println(toString());
+        return null;
     }
 
     public String toString(){
@@ -53,7 +59,8 @@ public class ContactDB implements Crud {
         return word;
     }
 
-    @Override
+
+    /*@Override
     public void addContact() {
 
     }
@@ -67,7 +74,7 @@ public class ContactDB implements Crud {
 
     @Override
     public void readContact() {
-        contact.get(contact.size());
+
     }
 
     @Override
@@ -80,5 +87,5 @@ public class ContactDB implements Crud {
         // Remove defined contact.
         contact.remove(contact);
         System.out.println(contact + "removed.");
-    }
+    }*/
 }
