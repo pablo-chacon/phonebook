@@ -1,3 +1,5 @@
+import contactDB.Crud;
+
 public class Administrator implements Crud {
 
     private String userName;
@@ -35,12 +37,12 @@ public class Administrator implements Crud {
     }
 
     @Override
-    public void createProfile() {
+    public void addContact() {
 
     }
 
     @Override
-    public void readProfile() {
+    public void readContact() {
 
     }
 
@@ -50,7 +52,7 @@ public class Administrator implements Crud {
     }
 
     @Override
-    public void deleteProfile() {
+    public void deleteContact() {
 
     }
 }

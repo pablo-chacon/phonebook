@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ContactDB extends Contact {
+public class ContactDB implements Crud {
 
     List<List<String>> contact = new ArrayList<>();
     List<Integer> maxLengths = new ArrayList<>();
@@ -51,5 +51,34 @@ public class ContactDB extends Contact {
             word += " ";
         }
         return word;
+    }
+
+    @Override
+    public void addContact() {
+
+    }
+
+    @Override
+    public void readAll() {
+        for (int i = 0; i <= contact.size(); i++) {
+            System.out.println(i);
+        }
+    }
+
+    @Override
+    public void readContact() {
+
+    }
+
+    @Override
+    public void updateProfile() {
+
+    }
+
+    @Override
+    public void deleteContact() {
+        // Remove defined contact.
+        contact.remove(contact);
+        System.out.println(contact + "removed.");
     }
 }

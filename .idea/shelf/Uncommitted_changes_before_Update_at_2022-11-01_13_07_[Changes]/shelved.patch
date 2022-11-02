@@ -1,0 +1,49 @@
+Index: src/Application.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Application.java b/src/Application.java
+--- a/src/Application.java	
++++ b/src/Application.java	
+@@ -1,9 +1,10 @@
+ import java.util.Scanner;
+ 
+ public class Application {
++
+     public static void main(String[] args) {
+ 
+-
++        Address address = new Address();
+         Contact contact = new Contact();
+         Scanner sc = new Scanner(System.in);
+ 
+@@ -16,18 +17,23 @@
+         System.out.println("Age");
+         contact.setAge(sc.nextInt());
+ 
+-        System.out.println("Address");
+-        contact.setAddress(sc.next());
+-
++        System.out.println("Street Address");
++        address.setStreetAddress(sc.next());
++        System.out.println("County");
++        address.setCounty(sc.next());
++        System.out.println("Zip code");
++        address.setZipCode(sc.next());
++        String addressData = address.addressData(address.getStreetAddress(), address.getCounty(), address.getZipCode());
+         System.out.println("phone");
++
+         contact.setPhoneNo(sc.next());
+ 
+-
++        //contact.getAddress()
+         new ContactDB()
+                 .addContact("First name", "Last name", "Age", "Address", "Phone")
+                 .addContact(
+                         contact.getFirstName(), contact.getLastName(),
+-                            String.valueOf(contact.getAge()), contact.getAddress(),
++                            String.valueOf(contact.getAge()), addressData,
+                             contact.getPhoneNo()).print();
+     }
+ 
