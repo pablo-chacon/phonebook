@@ -1,6 +1,6 @@
 import contactDB.Address;
 import contactDB.Contact;
-import contactDB.ContactDB;
+
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -10,31 +10,48 @@ public class Application {
 
 
 
-        Contact contact1 = new Contact.ContactBuilder("foo", "bar", "age", "07775566822")
-                .fName("foo")
-                .lName("bar")
-                .age(String.valueOf(13))
-                .phoneNo("54646841")
-                .build();
+        boolean running = true;
+        while(running) {
 
 
-        Address address1 = new Address.AddressBuilder("Street", "num", "county", "zip")
-                .streetAddress("Elmstreet")
-                .streetNum(String.valueOf(10))
-                .county("lääään")
-                .zipCode(String.valueOf(11177))
-                .build();
+            Scanner sc = new Scanner(System.in);
+            HashMap<String, String> contactNum = new HashMap<>();
+            HashMap<String, String> contactAddress = new HashMap<>();
 
 
+            Contact contact1 = new Contact.ContactBuilder("foo", "bar", "age", "07775500022")
+                    .fName(sc.next())
+                    .lName(sc.next())
+                    .age(String.valueOf(sc.next()))
+                    .phoneNo(String.valueOf(sc.next()))
+                    .build();
 
-        HashMap<String, String> contacts = new HashMap<>();
+            contactNum.put(contact1.getPhoneNo(), contact1.toString());
 
-        contacts.put(contact1.getPhoneNo(), contact1.toString());
-        HashMap<String, String> addresses = new HashMap<>();
-        addresses.put(address1.getStreetAddress(), address1.toString());
 
-        System.out.println(contacts);
-        System.out.println(addresses);
+            Address address1 = new Address.AddressBuilder("Street", "num", "county", "zip")
+                    .streetAddress(sc.next())
+                    .streetNum(String.valueOf(sc.next()))
+                    .county(sc.next())
+                    .zipCode(String.valueOf(sc.next()))
+                    .build();
+
+            contactAddress.put(contact1.getPhoneNo(), address1.toString());
+
+
+            System.out.println("input");
+            String search = String.valueOf(sc.next());
+
+            System.out.println(contactNum + "\n" + contactAddress.values());
+            System.out.println(contactNum.get(search) + "\n" + contactAddress.values() + "\nKeep going? y/n");
+
+            String quit = sc.next();
+            if (quit.equals("n")) {
+                running = false;
+            }
+
+
+        }
 
         /*dataBase.addContact("First name", "Last name", "Age", "Address", "Phone");
         System.out.println("first");
