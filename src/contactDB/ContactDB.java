@@ -3,10 +3,10 @@ package contactDB;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
-public class ContactDB  {
+public abstract class ContactDB implements Crud {
 
+    String contactInput;
     List<List<String>> contact = new ArrayList<>();
     List<Integer> maxLengths = new ArrayList<>();
     int numColumns = -1;
@@ -32,14 +32,12 @@ public class ContactDB  {
         return this;
     }
 
-    public void contactAddress() {
-        new Address();
 
-    }
-    public Map<? extends Contact, ? extends Address> print(){
-        System.out.println(toString());
-        return null;
-    }
+    /*public void readAll() {
+        for (int i = 0; i <= contact.size(); i++) {
+            System.out.println(i);
+        }
+    }*/
 
     public String toString(){
         String result = "";
@@ -60,10 +58,15 @@ public class ContactDB  {
     }
 
 
-    /*@Override
-    public void addContact() {
-
+    public ContactDB() {
+        super();
     }
+
+    public void addContact() {
+        addContact();
+    }
+
+    public abstract void readContact();
 
     @Override
     public void readAll() {
@@ -72,20 +75,18 @@ public class ContactDB  {
         }
     }
 
-    @Override
-    public void readContact() {
 
+    public void readContact(String search) {
+        System.out.println(contact.contains(search));
     }
 
-    @Override
-    public void updateProfile() {
-
+    public void updateContact() {
+        System.out.println(" ");
     }
 
-    @Override
     public void deleteContact() {
         // Remove defined contact.
         contact.remove(contact);
         System.out.println(contact + "removed.");
-    }*/
+    }
 }
