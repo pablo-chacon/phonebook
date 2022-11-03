@@ -10,73 +10,73 @@ public class Application {
 
 
 
-        boolean running = true;
-        while(running) {
-
-
-            Scanner sc = new Scanner(System.in);
-            HashMap<String, String> contactNum = new HashMap<>();
-            HashMap<String, String> contactAddress = new HashMap<>();
-
-
-            Contact contact1 = new Contact.ContactBuilder("foo", "bar", "age", "07775500022")
-                    .fName(sc.next())
-                    .lName(sc.next())
-                    .age(String.valueOf(sc.next()))
-                    .phoneNo(String.valueOf(sc.next()))
-                    .build();
-
-            contactNum.put(contact1.getPhoneNo(), contact1.toString());
-
-
-            Address address1 = new Address.AddressBuilder("Street", "num", "county", "zip")
-                    .streetAddress(sc.next())
-                    .streetNum(String.valueOf(sc.next()))
-                    .county(sc.next())
-                    .zipCode(String.valueOf(sc.next()))
-                    .build();
-
-            contactAddress.put(contact1.getPhoneNo(), address1.toString());
-
-
-            System.out.println("input");
-            String search = String.valueOf(sc.next());
-
-            System.out.println(contactNum + "\n" + contactAddress.values());
-            System.out.println(contactNum.get(search) + "\n" + contactAddress.values() + "\nKeep going? y/n");
-
-            String quit = sc.next();
-            if (quit.equals("n")) {
-                running = false;
-            }
-
-
-        }
-
-        /*dataBase.addContact("First name", "Last name", "Age", "Address", "Phone");
-        System.out.println("first");
-
-
-        System.out.println("Last");
-        //contact.setLastName(sc.next());
-
-        System.out.println("Age");
-        //contact.setAge(sc.nextInt());
-
-        System.out.println("Street");
-        //address.setStreetAddress(sc.next());
-
-        System.out.println("phone");
-        //contact.setPhoneNo(sc.next());*/
-
-
-
-//        new ContactDB()
-//                .addContact("First name", "Last name", "Age", "Address", "Phone")
-//                .addContact(
-//                        contact.getFirstName(), contact.getLastName(),
-//                            String.valueOf(contact.getAge()), contact.getAddress(),
-//                            contact.getPhoneNo()).print();
+//        boolean running = true;
+//        while(running) {
+//
+//
+//            Scanner sc = new Scanner(System.in);
+//            HashMap<String, String> contactNum = new HashMap<>();
+//            HashMap<String, String> contactAddress = new HashMap<>();
+//
+//
+//            Contact contact1 = new Contact.ContactBuilder("foo", "bar", "age", "07775500022")
+//                    .fName(sc.next())
+//                    .lName(sc.next())
+//                    .age(String.valueOf(sc.next()))
+//                    .phoneNo(String.valueOf(sc.next()))
+//                    .build();
+//
+//            contactNum.put(contact1.getPhoneNo(), contact1.toString());
+//
+//
+//            Address address1 = new Address.AddressBuilder("Street", "num", "county", "zip")
+//                    .streetAddress(sc.next())
+//                    .streetNum(String.valueOf(sc.next()))
+//                    .county(sc.next())
+//                    .zipCode(String.valueOf(sc.next()))
+//                    .build();
+//
+//            contactAddress.put(contact1.getPhoneNo(), address1.toString());
+//
+//
+//            System.out.println("input");
+//            String search = String.valueOf(sc.next());
+//
+//            System.out.println(contactNum + "\n" + contactAddress.values());
+//            System.out.println(contactNum.get(search) + "\n" + contactAddress.values() + "\nKeep going? y/n");
+//
+//            String quit = sc.next();
+//            if (quit.equals("n")) {
+//                running = false;
+//            }
+//
+//
+//        }
+//
+//        /*dataBase.addContact("First name", "Last name", "Age", "Address", "Phone");
+//        System.out.println("first");
+//
+//
+//        System.out.println("Last");
+//        //contact.setLastName(sc.next());
+//
+//        System.out.println("Age");
+//        //contact.setAge(sc.nextInt());
+//
+//        System.out.println("Street");
+//        //address.setStreetAddress(sc.next());
+//
+//        System.out.println("phone");
+//        //contact.setPhoneNo(sc.next());*/
+//
+//
+//
+////        new ContactDB()
+////                .addContact("First name", "Last name", "Age", "Address", "Phone")
+////                .addContact(
+////                        contact.getFirstName(), contact.getLastName(),
+////                            String.valueOf(contact.getAge()), contact.getAddress(),
+////                            contact.getPhoneNo()).print();
 
 
         // Start of the program
@@ -90,8 +90,7 @@ public class Application {
 
             //Log in as Admin
             if (userInput.equals("1")){
-                //Ask user to input password maybe hashmap
-
+                     confirmPassword();
                 // if password is correct
                     printOutAdminOptions();
                     userInput = askUserForInput();
@@ -196,10 +195,10 @@ public class Application {
         String userName = "Admin";
         String password = "1234";
 
-        System.out.println("Please enter your user name");
+        System.out.print("Please enter your user name: ");
         String inputUserName = scanner.nextLine();
 
-        System.out.println("Please enter your password");
+        System.out.print("Please enter your password: ");
         String inputPassword = scanner.nextLine();
 
         if (inputUserName.equalsIgnoreCase(userName) && (inputPassword.equals(password))) {
@@ -208,4 +207,43 @@ public class Application {
             System.out.println("Invalid user name or password");
         }
     }
+   // public ContactDB findContactDB(int phoneNo) {
+//    for (ContactDB l: list) {
+//    if(l.getPhoneNo() == phoneNo) {
+//    return l;
+//    }
+//    }
+//    return null;
+//}
+//
+//public void updateContact(int phoneNo) {
+//        if(find(phoneNo)) {
+//            ContactDB c = findContactDB(phoneNo);
+//
+//            System.out.print("Write contact's new first name: ");
+//            String firstName = scanner.nextLine();
+//
+//            System.out.print("Write contact's new last name: ");
+//            String lastName = scanner.nextLine();
+//
+//            System.out.print("Write contact's new age: ");
+//            int age = scanner.nextInt();
+//
+//            System.out.print("Write contact's new address: ");
+//            String address = scanner.nextLine();
+//
+//            System.out.print("Write contact's new phone number: ");
+//            String phoneNo = scanner.nextLine();
+//
+//            c.setFirstName(firstName);
+//            c.setLastName(lastName);
+//            c.setAge(age);
+//            c.setAddress(address);
+//            c.setPhoneNo(phoneNo);
+//            System.out.println("Contact updated successfully");
+//        } else {
+//            System.out.print("Contact not found");
+//
+//        }
+//    }
 }
