@@ -173,5 +173,22 @@ public class Application {
                 [5] Go back
                 """);
     }
+    public static void confirmPassword() {
+        Scanner scanner = new Scanner(System.in);
 
+        String userName = "Admin";
+        String password = "1234";
+
+        System.out.println("Please enter your user name");
+        String inputUserName = scanner.nextLine();
+
+        System.out.println("Please enter your password");
+        String inputPassword = scanner.nextLine();
+
+        if (inputUserName.equalsIgnoreCase(userName) && (inputPassword.equals(password))) {
+            System.out.println("You are logged in");
+        } else {
+            System.out.println("Invalid user name or password");
+        }
+    }
 }
