@@ -1,9 +1,12 @@
+package contactDB;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ContactDB extends Contact {
+public abstract class ContactDB implements Crud {
 
+    String contactInput;
     List<List<String>> contact = new ArrayList<>();
     List<Integer> maxLengths = new ArrayList<>();
     int numColumns = -1;
@@ -29,9 +32,12 @@ public class ContactDB extends Contact {
         return this;
     }
 
-    public void print(){
-        System.out.println(toString());
-    }
+
+    /*public void readAll() {
+        for (int i = 0; i <= contact.size(); i++) {
+            System.out.println(i);
+        }
+    }*/
 
     public String toString(){
         String result = "";
@@ -49,5 +55,38 @@ public class ContactDB extends Contact {
             word += " ";
         }
         return word;
+    }
+
+
+    public ContactDB() {
+        super();
+    }
+
+    public void addContact() {
+        addContact();
+    }
+
+    public abstract void readContact();
+
+    @Override
+    public void readAll() {
+        for (int i = 0; i <= contact.size(); i++) {
+            System.out.println(i);
+        }
+    }
+
+
+    public void readContact(String search) {
+        System.out.println(contact.contains(search));
+    }
+
+    public void updateContact() {
+        System.out.println(" ");
+    }
+
+    public void deleteContact() {
+        // Remove defined contact.
+        contact.remove(contact);
+        System.out.println(contact + "removed.");
     }
 }
