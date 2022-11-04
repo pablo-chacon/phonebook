@@ -337,4 +337,33 @@ public class Application {
          int input = Integer.parseInt(askUserForInput());
          phoneBook.remove(input);
     }
+
+    static public void searchContact () {
+        System.out.println("""
+                    Select one of the following options:
+                    [1] Search by first name
+                    [2] Search by last name
+                    [3] Search by address
+                    [4] Free search
+                    """);
+        //"[5] Go back");
+    }
+
+
+    static public void readContact (int choice) {
+
+        if (choice == (1)) {
+            //searchByFirstName();
+        } else if (choice == (2)) {
+            //searchByLastName();
+        } else if (choice == (3)) {
+           // searchByAddress();
+        } else if (choice == (4)) {
+           // freeSearch();
+        }
+        //else {
+        // goBack();
+
+        //}
+    }
 }
