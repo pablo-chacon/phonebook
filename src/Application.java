@@ -141,29 +141,29 @@ public class Application {
 
         while (isRunning) {
             printOutMainMenu();
-            String userInput = askUserForInput();
+            int choice = askUserForInput();
 
             //Log in as Admin
-            if (userInput.equals("1")) {
+            if (choice == 1) {
                 confirmPassword();
 
                 printOutAdminOptions();
-                userInput = askUserForInput();
+                choice = askUserForInput();
 
 
-                if (userInput.equals("1")) {
+                if (choice == 1) {
                     //Create
                     while (true) {
-                        System.out.println("Create Contact (y/n)");
-                        userInput = askUserForInput();
-                        if (userInput.equals("y")) {
-                            HashMap contact = createContact();
-                            phoneBook.add(contact);
-                            printAllContacts();
-                        } else {
-
-                            break;
-                        }
+//                        System.out.println("Create Contact (y/n)");
+//                        choice = askUserForInput();
+//                        if (userInput.equals("y")) {
+//                            HashMap contact = createContact();
+//                            phoneBook.add(contact);
+//                            printAllContacts();
+//                        } else {
+//
+//                            break;
+//                        }
                     }
 
 
@@ -173,34 +173,40 @@ public class Application {
                     //add new contact to phone book
                     // else
                     // deny the request and print out an error messages
-                } else if (userInput.equals("2")) {
+                } else if (choice == 2) {
                     // read contacts
-                    String input = askUserForInput();
+                    searchContact();
+                     choice = askUserForInput();
+                    readContact(choice);
 
 
-                } else if (userInput.equals("3")) {
+
+                } else if (choice == 3) {
                     //Update - att kunna uppdatera en profils kontaktuppgifter
-                } else if (userInput.equals("4")) {
+                } else if (choice == 4) {
                     //Delete - att kunna ta bort en profil
-                } else if (userInput.equals("5")) {
+                } else if (choice == 5) {
                     //Go backward to previous menu
                 }
                 //Log in as Guest
-            } else if (userInput.equals("2")) {
+            } else if (choice == 2) {
                 printOutGuestOptions();
-                userInput = askUserForInput();
+                choice = askUserForInput();
 
-                if (userInput.equals("1")) {
+                if (choice == 1) {
                     //Create a contact
-                } else if (userInput.equals("2")) {
+                } else if (choice == 2) {
                     //Read contacts
-                    String input = askUserForInput();
+                    searchContact();
+                    choice = askUserForInput();
+                    readContact(choice);
 
-                } else if (userInput.equals("3")) {
+
+                } else if (choice == 3) {
                     //Go backward to previous menu
                 }
                 // Exit Program
-            } else if (userInput.equals("3")) {
+            } else if (choice == 3) {
                 isRunning = false;
                 System.out.println("\nHave a nice day my friend");
             }
@@ -219,10 +225,10 @@ public class Application {
                 """);
     }
 
-    static public String askUserForInput() {
+    static public int askUserForInput() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Input: ");
-        return sc.nextLine();
+        return sc.nextInt();
     }
 
     static public void printOutAdminOptions() {
@@ -334,7 +340,7 @@ public class Application {
         }
     }
     static public void removeContact(){
-         int input = Integer.parseInt(askUserForInput());
+         int input = (askUserForInput());
          phoneBook.remove(input);
     }
 
