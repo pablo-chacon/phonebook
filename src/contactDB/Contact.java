@@ -1,6 +1,9 @@
 package contactDB;
 
+import java.util.Scanner;
+
 public class Contact {
+    static public Scanner sc = new Scanner(System.in);
 
     private String firstName;
     private String lastName;
@@ -57,23 +60,26 @@ public class Contact {
             this.phoneNo = phoneNo;
         }
 
-        public ContactBuilder phoneNo(String phoneNo) {
-            this.phoneNo = phoneNo;
+        public ContactBuilder fName() {
+            System.out.print("First Name: ");
+            this.firstName = sc.next();
             return this;
         }
 
-        public ContactBuilder fName(String firstName) {
-            this.firstName = firstName;
+        public ContactBuilder lName() {
+            System.out.print("Last Name: ");
+            this.lastName = sc.next();
             return this;
         }
 
-        public ContactBuilder lName(String lastName) {
-            this.lastName = lastName;
+        public ContactBuilder age() {
+            System.out.print("Age: ");
+            this.age = sc.next();
             return this;
         }
-
-        public ContactBuilder age(String age) {
-            this.age = age;
+        public ContactBuilder phoneNo() {
+            System.out.println("Phone: ");
+            this.phoneNo = sc.next();
             return this;
         }
         public Contact build() {
