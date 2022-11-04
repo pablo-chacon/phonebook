@@ -4,7 +4,7 @@ public class Contact  {
 
     private String firstName;
     private String lastName;
-    private String age;
+    private int age;
     private String phoneNo;
     public String streetAddress;
     public String streetNum;
@@ -37,7 +37,11 @@ public class Contact  {
 
 
     public String getAge() {
-        return age;
+        return String.valueOf(age);
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
     }
 
     @Override
@@ -45,11 +49,13 @@ public class Contact  {
         return "name " + this.firstName+ " " + this.lastName + " \nage " +this.age +
                 " \naddress " + this.streetAddress + " " + this.streetNum + " \ncounty " + this.county + " \nzip " + this.zipCode;
     }
+
+
     public static class ContactBuilder {
 
         private String firstName;
         private String lastName;
-        private String age;
+        private int age;
         private String phoneNo;
         public String streetAddress;
         public String streetNum;
@@ -57,7 +63,7 @@ public class Contact  {
         public String zipCode;
 
 
-        public ContactBuilder(String firstName, String lastName, String age, String streetAddress,
+        public ContactBuilder(String firstName, String lastName, int age, String streetAddress,
                               String streetNum, String county, String zipCode) {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -79,7 +85,7 @@ public class Contact  {
             return this;
         }
 
-        public ContactBuilder age(String age) {
+        public ContactBuilder age(int age) {
             this.age = age;
             return this;
         }

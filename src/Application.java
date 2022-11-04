@@ -310,26 +310,28 @@ public class Application {
 //    }
 
     static public HashMap createContact() {
-        Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth", "23", "4535353")
-                .fName()
-                .lName()
-                .age()
+        Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth",
+                2, "4535353", "", "", "")
+                .fName("foo")
+                .lName("bar")
+                .age(4)
+                .streetAddress("bargatan")
+                .streetNum("23")
+                .county("lään")
+                .zipCode("111222")
                 .build();
-        Address addressInfo = new Address.AddressBuilder("Skolvägen", "6", "Sweden", "98432")
-                .streetAddress()
-                .streetNum()
-                .county()
-                .zipCode()
-                .build();
+        /*Address addressInfo = new Address.AddressBuilder("Skolvägen", "6", "Sweden", "98432")
+
+                .build();*/
 
         LinkedHashMap<String, String> contact = new LinkedHashMap<>();
         contact.put("First Name", contactInfo.getFirstName());
         contact.put("Last Name", contactInfo.getLastName());
         contact.put("Age", contactInfo.getAge());
         contact.put("Phone", contactInfo.getPhoneNo());
-        contact.put("StreetAddress ", addressInfo.getStreetAddress() + addressInfo.getStreetNum());
-        contact.put("Country", addressInfo.getCounty());
-        contact.put("Zip Code", addressInfo.getZipCode());
+        contact.put("StreetAddress ", contactInfo.streetAddress + contactInfo.streetNum);
+        contact.put("Country", contactInfo.county);
+        contact.put("Zip Code", contactInfo.zipCode);
         return contact;
     }
     static public void printAllContacts(){
