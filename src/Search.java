@@ -2,7 +2,10 @@ public interface Search {
 
     void searchByFirstName();
 
-    void searchByFamilyName();
+    void searchByLastName();
 
     void searchByAddress();
+
+    void freeSearch();
+
 }
