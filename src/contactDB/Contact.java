@@ -50,7 +50,6 @@ public class Contact {
         private String firstName;
         private String lastName;
         private String age;
-
         private String phoneNo;
 
         public ContactBuilder(String firstName, String lastName, String age, String phoneNo) {
