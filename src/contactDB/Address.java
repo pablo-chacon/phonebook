@@ -1,6 +1,9 @@
 package contactDB;
 
+import java.util.Scanner;
+
 public class Address {
+    static public Scanner sc = new Scanner(System.in);
 
     public String streetAddress;
     public String streetNum;
@@ -10,7 +13,7 @@ public class Address {
 
     public Address(AddressBuilder builder) {
         this.streetAddress = builder.streetAddress;
-        this.streetNum = streetNum;
+        this.streetNum = builder.streetNum;
         this.county = builder.county;
         this.zipCode = builder.zipCode;
     }
@@ -31,7 +34,9 @@ public class Address {
         return county;
     }
 
-
+    public String getStreetNum() {
+        return streetNum;
+    }
 
     public String toString() {
         return "Street: " + getStreetAddress() + " County: " + getCounty() +
@@ -47,27 +52,32 @@ public class Address {
 
         public AddressBuilder(String streetAddress, String streetNum, String county, String zipCode) {
             this.streetAddress = streetAddress;
-            this.county = county;
-            this.zipCode = zipCode;
-        }
-
-        public AddressBuilder streetAddress(String streetAddress) {
-            this.streetAddress = streetAddress;
-            return this;
-        }
-
-        public AddressBuilder streetNum(String streetNum) {
             this.streetNum = streetNum;
-            return this;
-        }
-
-        public AddressBuilder county(String county) {
             this.county = county;
+            this.zipCode = zipCode;
+        }
+
+        public AddressBuilder streetAddress() {
+            System.out.print("Street Address: ");
+            this.streetAddress = sc.next();
             return this;
         }
 
-        public AddressBuilder zipCode(String zipCode) {
-            this.zipCode = zipCode;
+        public AddressBuilder streetNum() {
+            System.out.print("Street Number: ");
+            this.streetNum = sc.next();
+            return this;
+        }
+
+        public AddressBuilder county() {
+            System.out.print("Country: ");
+            this.county = sc.next();
+            return this;
+        }
+
+        public AddressBuilder zipCode() {
+            System.out.print("Zip Code: ");
+            this.zipCode = sc.next();
             return this;
         }
 

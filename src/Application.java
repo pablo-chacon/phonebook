@@ -86,10 +86,10 @@ public class Application {
 
         while (isRunning){
             printOutMainMenu();
-            int userInput = askUserForInput();
+            String userInput = askUserForInput();
 
             //Log in as Admin
-            if (userInput == 1){
+            if (userInput.equals("1")){
                      confirmPassword();
                 // if password is correct
                     printOutAdminOptions();
@@ -97,7 +97,7 @@ public class Application {
                 // else-if password is incorrect
                     // printout an error message
 
-                if (userInput == 1){
+                if (userInput.equals("1")){
                     //Create a new contact
 
                     // ask user to input: firstName, surname, contactAge, adress, phone-number
@@ -106,41 +106,37 @@ public class Application {
                         //add new contact to phone book
                     // else
                         // deny the request and print out an error messages
-                } else if (userInput == 2) {
+                } else if (userInput.equals("2")) {
                     // read contacts
-                    searchContact();
-                    int choice = askUserForInput();
-                    readContact(choice);
-                    int input = askUserForInput();
+                    printOutSearchOptions();
+                    String input = askUserForInput();
 
 
 
-                } else if (userInput == 3) {
+                } else if (userInput.equals("3")) {
                     //Update - att kunna uppdatera en profils kontaktuppgifter
-                } else if (userInput == 4) {
+                } else if (userInput.equals("4")) {
                     //Delete - att kunna ta bort en profil
-                } else if (userInput == 5) {
+                } else if (userInput.equals("5")) {
                     //Go backward to previous menu
                 }
             //Log in as Guest
-            } else if (userInput == 2){
+            } else if (userInput.equals("2")){
                printOutGuestOptions();
                userInput = askUserForInput();
 
-               if (userInput == 1){
+               if (userInput.equals("1")){
                    //Create a contact
-               } else if (userInput == 2) {
+               } else if (userInput.equals("2")) {
                    //Read contacts
-                  searchContact();
-                   int choice = askUserForInput();
-                  readContact(choice);
-                   int input = askUserForInput();
+                   printOutSearchOptions();
+                   String input = askUserForInput();
 
-               } else if (userInput == 3) {
+               } else if (userInput.equals("3")) {
                    //Go backward to previous menu
                }
             // Exit Program
-            } else if (userInput == 3) {
+            } else if (userInput.equals("3")) {
                 isRunning = false;
                 System.out.println("\nHave a nice day my friend");
             }
@@ -158,10 +154,10 @@ public class Application {
                 [3] Exit
                 """);
     }
-    static public int askUserForInput(){
+    static public String askUserForInput(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Input: ");
-        return sc.nextInt();
+        return sc.nextLine();
     }
 
     static public void printOutAdminOptions(){
@@ -250,37 +246,4 @@ public class Application {
 //
 //        }
 //    }
-
-    Scanner scanner = new Scanner(System.in);
-    int choice = scanner.nextInt();
-
-
-    static public void searchContact () {
-        System.out.println("""
-                Select one of the following options:
-                [1] Search by first name
-                [2] Search by last name
-                [3] Search by address
-                [4] Free search
-               """);
-        //"[5] Go back");
-    }
-
-
-    static public void readContact (int choice) {
-
-        if (choice == (1)) {
-           // searchByFirstName();
-        } else if (choice == (2)) {
-           // searchByLastName();
-        } else if (choice == (3)) {
-            // searchByAddress();
-        } else if (choice == (4)) {
-           // freeSearch();
-        }
-        //else {
-        // goBack();
-
-        //}
-    }
 }
