@@ -2,12 +2,67 @@ import contactDB.Address;
 import contactDB.Contact;
 
 
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Application {
+    static public List<HashMap<Contact,Address>> phoneBook = new ArrayList<>();
+
     public static void main(String[] args) {
 
+//        phoneBook.add(contact1);
+//        phoneBook.add(contact2);
+//        phoneBook.add(contact3);
+
+//        printAllContacts();
+//        System.out.println();
+
+
+
+//        Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth", "23", "4535353")
+//                .fName()
+//                .lName()
+//                .age()
+//                .build();
+//        Address addressInfo = new Address.AddressBuilder("Skolvägen", "6", "Sweden", "98432")
+//                .streetAddress()
+//                .streetNum()
+//                .county()
+//                .zipCode()
+//                .build();
+//
+//
+//
+//        phoneBook.add(contact);
+//
+//        for (HashMap contact1 : phoneBook) {
+//            System.out.println(contact1);
+//        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        System.out.println(whatItIs.get(0) + ": " + contact.get(s.get(0)));
+
+
+//        for (int i = 0; i < phoneBook.size(); i++) {
+//            System.out.println("First Name: " + phoneBook.get(i).get("First Name"));
+//            System.out.println("Last Name: " + phoneBook.get(i).get("Last Name"));
+//            System.out.println("Age: " + phoneBook.get(i).get("Age"));
+//            System.out.println("Phone: " + phoneBook.get(i).get("Phone"));
+//            System.out.println("Street Address: " + phoneBook.get(i).get("Street Address"));
+//            System.out.println("Country: " + phoneBook.get(i).get("Country"));
+//            System.out.println("Zip Code: " + phoneBook.get(i).get("Zip Code"));
+//        }
 
 
 //        boolean running = true;
@@ -84,33 +139,43 @@ public class Application {
         boolean isRunning = true;
 
 
-        while (isRunning){
+        while (isRunning) {
             printOutMainMenu();
             String userInput = askUserForInput();
 
             //Log in as Admin
-            if (userInput.equals("1")){
-                     confirmPassword();
-                // if password is correct
-                    printOutAdminOptions();
-                    userInput = askUserForInput();
-                // else-if password is incorrect
-                    // printout an error message
+            if (userInput.equals("1")) {
+                confirmPassword();
 
-                if (userInput.equals("1")){
-                    //Create a new contact
+                printOutAdminOptions();
+                userInput = askUserForInput();
+
+
+                if (userInput.equals("1")) {
+                    //Create
+                    while (true) {
+                        System.out.println("Create Contact (y/n)");
+                        userInput = askUserForInput();
+                        if (userInput.equals("y")) {
+                            HashMap contact = createContact();
+                            phoneBook.add(contact);
+                            printAllContacts();
+                        } else {
+
+                            break;
+                        }
+                    }
+
 
                     // ask user to input: firstName, surname, contactAge, adress, phone-number
 
                     // if phone-number is not similar to a phone-number already exist in phone book
-                        //add new contact to phone book
+                    //add new contact to phone book
                     // else
-                        // deny the request and print out an error messages
+                    // deny the request and print out an error messages
                 } else if (userInput.equals("2")) {
                     // read contacts
-                    printOutSearchOptions();
                     String input = askUserForInput();
-
 
 
                 } else if (userInput.equals("3")) {
@@ -120,22 +185,21 @@ public class Application {
                 } else if (userInput.equals("5")) {
                     //Go backward to previous menu
                 }
-            //Log in as Guest
-            } else if (userInput.equals("2")){
-               printOutGuestOptions();
-               userInput = askUserForInput();
+                //Log in as Guest
+            } else if (userInput.equals("2")) {
+                printOutGuestOptions();
+                userInput = askUserForInput();
 
-               if (userInput.equals("1")){
-                   //Create a contact
-               } else if (userInput.equals("2")) {
-                   //Read contacts
-                   printOutSearchOptions();
-                   String input = askUserForInput();
+                if (userInput.equals("1")) {
+                    //Create a contact
+                } else if (userInput.equals("2")) {
+                    //Read contacts
+                    String input = askUserForInput();
 
-               } else if (userInput.equals("3")) {
-                   //Go backward to previous menu
-               }
-            // Exit Program
+                } else if (userInput.equals("3")) {
+                    //Go backward to previous menu
+                }
+                // Exit Program
             } else if (userInput.equals("3")) {
                 isRunning = false;
                 System.out.println("\nHave a nice day my friend");
@@ -146,7 +210,7 @@ public class Application {
         // End of the program
     }
 
-    static public void printOutMainMenu(){
+    static public void printOutMainMenu() {
         System.out.println("""
                 Select one of following options
                 [1] Login as Admin
@@ -154,13 +218,14 @@ public class Application {
                 [3] Exit
                 """);
     }
-    static public String askUserForInput(){
+
+    static public String askUserForInput() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Input: ");
         return sc.nextLine();
     }
 
-    static public void printOutAdminOptions(){
+    static public void printOutAdminOptions() {
         System.out.println("""
                 \nSelect one of following options
                 [1] Create contact
@@ -171,7 +236,7 @@ public class Application {
                 """);
     }
 
-    static public void printOutGuestOptions(){
+    static public void printOutGuestOptions() {
         System.out.println("""
                 \nSelect one of following options
                 [1] Create contact
@@ -179,16 +244,7 @@ public class Application {
                 [3] Go back
                 """);
     }
-    static public void printOutSearchOptions(){
-        System.out.println("""
-                \nSelect one of following options
-                [1] Search by first name
-                [2] Search by surname
-                [3] Search by address
-                [4] Free search
-                [5] Go back
-                """);
-    }
+
     public static void confirmPassword() {
         Scanner scanner = new Scanner(System.in);
 
@@ -207,7 +263,7 @@ public class Application {
             System.out.println("Invalid user name or password");
         }
     }
-   // public ContactDB findContactDB(int phoneNo) {
+    // public ContactDB findContactDB(int phoneNo) {
 //    for (ContactDB l: list) {
 //    if(l.getPhoneNo() == phoneNo) {
 //    return l;
@@ -246,4 +302,39 @@ public class Application {
 //
 //        }
 //    }
+
+    static public HashMap createContact() {
+        Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth", "23", "4535353")
+                .fName()
+                .lName()
+                .age()
+                .build();
+        Address addressInfo = new Address.AddressBuilder("Skolvägen", "6", "Sweden", "98432")
+                .streetAddress()
+                .streetNum()
+                .county()
+                .zipCode()
+                .build();
+
+        LinkedHashMap<String, String> contact = new LinkedHashMap<>();
+        contact.put("First Name", contactInfo.getFirstName());
+        contact.put("Last Name", contactInfo.getLastName());
+        contact.put("Age", contactInfo.getAge());
+        contact.put("Phone", contactInfo.getPhoneNo());
+        contact.put("StreetAddress ", addressInfo.getStreetAddress() + addressInfo.getStreetNum());
+        contact.put("Country", addressInfo.getCounty());
+        contact.put("Zip Code", addressInfo.getZipCode());
+        return contact;
+    }
+    static public void printAllContacts(){
+        System.out.println();
+        for (int i = 0; i < phoneBook.size() ; i++) {
+            HashMap contact = phoneBook.get(i);
+            System.out.println(contact);
+        }
+    }
+    static public void removeContact(){
+         int input = Integer.parseInt(askUserForInput());
+         phoneBook.remove(input);
+    }
 }

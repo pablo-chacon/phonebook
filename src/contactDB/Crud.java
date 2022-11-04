@@ -1,5 +1,7 @@
 package contactDB;
 
+import java.util.HashMap;
+
 public interface Crud {
 
 void addContact();
