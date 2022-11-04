@@ -1,5 +1,3 @@
-package contactDB;
-
 public interface Crud {
 
 void addContact();

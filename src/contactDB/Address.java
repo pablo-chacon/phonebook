@@ -18,8 +18,6 @@ public class Address {
         this.zipCode = builder.zipCode;
     }
 
-
-
     public String getStreetAddress() {
         return streetAddress;
     }
@@ -39,8 +37,8 @@ public class Address {
     }
 
     public String toString() {
-        return "Street: " + getStreetAddress() + " County: " + getCounty() +
-                " Zip: " + getZipCode();
+        return "\nStreet: " + getStreetAddress() + "\nCounty " + getCounty() +
+                "\nZip: " + getZipCode();
     }
 
     public static class AddressBuilder {
