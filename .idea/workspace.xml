@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b31fd342-1753-4026-85db-b01b218bf389" name="Changes" comment="read">
+    <list default="true" id="b31fd342-1753-4026-85db-b01b218bf389" name="Changes" comment="LinkedHashMap">
+      <change afterPath="$PROJECT_DIR$/src/PhoneBook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contactDB/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/contactDB/Contact.java" afterDir="false" />
@@ -40,7 +41,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/IdeaProjects/phonebook&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Dev/phonebookCurrentVersion&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
@@ -65,6 +66,15 @@
       <workItem from="1667377338972" duration="2882000" />
       <workItem from="1667466036640" duration="89000" />
       <workItem from="1667466158918" duration="424000" />
+      <workItem from="1667496734215" duration="5405000" />
+      <workItem from="1667503494993" duration="2292000" />
+      <workItem from="1667506152415" duration="1538000" />
+      <workItem from="1667507840271" duration="478000" />
+      <workItem from="1667508366552" duration="106000" />
+      <workItem from="1667509360742" duration="1465000" />
+      <workItem from="1667511453050" duration="150000" />
+      <workItem from="1667512364001" duration="62000" />
+      <workItem from="1667548789464" duration="1692000" />
     </task>
     <task id="LOCAL-00001" summary="mainMenu">
       <created>1667298952064</created>
@@ -121,13 +131,7 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1667466105686</updated>
     </task>
-    <task id="LOCAL−00009" summary="read">
-      <created>1667563598528</created>
-      <option name="number" value="LOCAL−00009" />
-      <option name="presentableId" value="LOCAL−00009" />
-      <updated>1667563598528</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +155,6 @@
     <MESSAGE value="Delete PrintOut class and adding Main Menu and sub Menu" />
     <MESSAGE value="classes and interfaces" />
     <MESSAGE value="pass" />
-    <MESSAGE value="read" />
-    <option name="LAST_COMMIT_MESSAGE" value="read" />
+    <option name="LAST_COMMIT_MESSAGE" value="pass" />
   </component>
 </project>
