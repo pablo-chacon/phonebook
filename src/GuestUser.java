@@ -1,9 +1,15 @@
-/*import contactDB.Crud;
 
 public class GuestUser implements Crud {
 
+
+
     @Override
     public void addContact() {
+
+    }
+
+    @Override
+    public void readAll() {
 
     }
 
@@ -13,7 +19,7 @@ public class GuestUser implements Crud {
     }
 
     @Override
-    public void updateProfile() {
+    public void updateContact() {
 
     }
 
@@ -22,4 +28,3 @@ public class GuestUser implements Crud {
 
     }
 }
-*/

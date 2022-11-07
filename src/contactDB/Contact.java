@@ -1,6 +1,9 @@
 package contactDB;
 
+import java.util.Scanner;
+
 public class Contact  {
+    static Scanner sc = new Scanner(System.in);
 
     private String firstName;
     private String lastName;
@@ -63,11 +66,12 @@ public class Contact  {
         public String zipCode;
 
 
-        public ContactBuilder(String firstName, String lastName, int age, String streetAddress,
+        public ContactBuilder(String firstName, String lastName, int age, String phoneNo, String streetAddress,
                               String streetNum, String county, String zipCode) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.age = age;
+            this.phoneNo = phoneNo;
             this.streetAddress = streetAddress;
             this.streetNum = streetNum;
             this.county = county;
@@ -75,47 +79,56 @@ public class Contact  {
         }
 
 
-        public ContactBuilder fName(String firstName) {
-            this.firstName = firstName;
+        public ContactBuilder fName() {
+            System.out.print("First Name: ");
+            this.firstName = sc.next();
             return this;
         }
 
-        public ContactBuilder lName(String lastName) {
-            this.lastName = lastName;
+        public ContactBuilder lName() {
+            System.out.print("Last Name: ");
+            this.lastName = sc.next();
             return this;
         }
 
-        public ContactBuilder age(int age) {
-            this.age = age;
+        public ContactBuilder age() {
+            System.out.print("Age: ");
+            this.age = sc.nextInt();
             return this;
         }
+
 
         public String getPhoneNo() {
             return phoneNo;
         }
 
-        public ContactBuilder phoneNo(String phoneNo) {
-            this.phoneNo = phoneNo;
+        public ContactBuilder phoneNo() {
+            System.out.print("Phone: ");
+            this.phoneNo = sc.next();
             return this;
         }
 
-        public ContactBuilder streetAddress(String streetAddress) {
-            this.streetAddress = streetAddress;
+        public ContactBuilder streetAddress() {
+            System.out.print("StreetAddress: ");
+            this.streetAddress = sc.next();
             return this;
         }
 
-        public ContactBuilder streetNum(String streetNum) {
-            this.streetNum = streetNum;
+        public ContactBuilder streetNum() {
+            System.out.print("Street Number: ");
+            this.streetNum = sc.next();
             return this;
         }
 
-        public ContactBuilder county(String county) {
-            this.county = county;
+        public ContactBuilder county() {
+            System.out.print("Country: ");
+            this.county = sc.next();
             return this;
         }
 
-        public ContactBuilder zipCode(String zipCode) {
-            this.zipCode = zipCode;
+        public ContactBuilder zipCode() {
+            System.out.print("Zip Code: ");
+            this.zipCode = sc.next();
             return this;
         }
         public Contact build() {

@@ -1,3 +1,5 @@
+import contactDB.Contact;
+
 public interface Crud {
 
 void addContact();

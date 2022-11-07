@@ -1,4 +1,4 @@
-/*import contactDB.Crud;
+
 
 public class Administrator implements Crud {
 
@@ -7,15 +7,15 @@ public class Administrator implements Crud {
     private boolean isLoggedIn;
 
     public Administrator(String userName, String password, Boolean isLoggedIn) {
-//<<<<<<< HEAD
+
         this.userName = userName;
         this.password = password;
         this.isLoggedIn = isLoggedIn;
-//=======
+
     this.userName = userName;
     this.password = password;
     this.isLoggedIn = isLoggedIn;
-//>>>>>>> origin/master
+
     }
 
     public String getUserName() {
@@ -48,12 +48,17 @@ public class Administrator implements Crud {
     }
 
     @Override
+    public void readAll() {
+
+    }
+
+    @Override
     public void readContact() {
 
     }
 
     @Override
-    public void updateProfile() {
+    public void updateContact() {
 
     }
 
@@ -62,4 +67,3 @@ public class Administrator implements Crud {
 
     }
 }
-*/
