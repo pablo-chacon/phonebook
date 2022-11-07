@@ -1,20 +1,19 @@
-import contactDB.Address;
 import contactDB.Contact;
-
-
-import java.util.*;
+import contactDB.*;
 
 public class Application {
-    static public List<HashMap<Contact,Address>> phoneBook = new ArrayList<>();
+
+    private static DataBase<Contact> contactdb;
+    //static public List<HashMap<Contact,Address>> phoneBook = new ArrayList<>();
 
     public static void main(String[] args) {
 
-        PhoneBook database = new PhoneBook();
+       /* PhoneBook database = new PhoneBook();
         database.defaultContact();
 
         for (int i = 0; i <3 ; i++) {
             database.addContact();
-        }
+        }*/
 
 
 //        phoneBook.add(contact1);
@@ -31,7 +30,6 @@ public class Application {
 //                .lName()
 //                .age()
 //                .build();
-//        Address addressInfo = new Address.AddressBuilder("Skolvägen", "6", "Sweden", "98432")
 //                .streetAddress()
 //                .streetNum()
 //                .county()
@@ -45,6 +43,27 @@ public class Application {
 //        for (HashMap contact1 : phoneBook) {
 //            System.out.println(contact1);
 //        }
+        contactdb = new ContactDataBase();
+        Contact contact = contactdb.addContact(new Contact("First Name", "Last name", "Age",
+                "Phone number", "Street", "Number", "County", "Zip code"));
+
+        // get by first name, loop through.
+        contactdb.getAll().forEach(contacts -> System.out.println(contact.getFname()));
+        // Last name,
+        contactdb.getAll().forEach(contacts -> System.out.println(contact.getLname()));
+        // Street address,
+        contactdb.getAll().forEach(contacts -> System.out.println(contact.getStreetAddress()));
+        // Phone.
+        contactdb.getAll().forEach(contacts -> System.out.println(contact.getPhone()));
+        // Update contact by parameters Array.
+        contactdb.update(contact, new String[]{"Torsten", "lname", "age", "077005485", "street", "num", "county", "zip"});
+        System.out.println(contact.getFname());
+
+        System.out.println(contactdb.getContact(0));
+        System.out.println(contactdb.getAll());
+
+        contactdb.delete(contact);
+    }
 
 
 
@@ -144,7 +163,7 @@ public class Application {
 
         // Start of the program
 
-        boolean isRunning = true;
+        /*boolean isRunning = true;
 
 
         while (isRunning) {
@@ -312,7 +331,7 @@ public class Application {
 //    }
 
     static public HashMap createContact() {
-        Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth",
+                Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth",
                 2, "4535353", "", "", "")
                 .fName("foo")
                 .lName("bar")
@@ -326,7 +345,7 @@ public class Application {
 
                 .build();*/
 
-        LinkedHashMap<String, String> contact = new LinkedHashMap<>();
+        /*LinkedHashMap<String, String> contact = new LinkedHashMap<>();
         contact.put("First Name", contactInfo.getFirstName());
         contact.put("Last Name", contactInfo.getLastName());
         contact.put("Age", contactInfo.getAge());
@@ -334,6 +353,8 @@ public class Application {
         contact.put("StreetAddress ", contactInfo.streetAddress + contactInfo.streetNum);
         contact.put("Country", contactInfo.county);
         contact.put("Zip Code", contactInfo.zipCode);
+        HashMap<String, Contact> contact = new HashMap<>();
+        contact.put("Test ", contactInfo);
         return contact;
     }
     static public void printAllContacts(){
@@ -346,5 +367,7 @@ public class Application {
     static public void removeContact(){
          int input = Integer.parseInt(askUserForInput());
          phoneBook.remove(input);
-    }
+    }*/
+
+
 }
