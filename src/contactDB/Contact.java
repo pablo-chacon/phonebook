@@ -1,140 +1,92 @@
 package contactDB;
+// Contact POJO.
 
-import java.util.Scanner;
+public class Contact {
 
-public class Contact  {
-    static Scanner sc = new Scanner(System.in);
+    private String fname;
+    private String lname;
+    private String age;
+    private String phone;
 
-    private String firstName;
-    private String lastName;
-    private int age;
-    private String phoneNo;
     public String streetAddress;
     public String streetNum;
     public String county;
     public String zipCode;
 
-
-    public Contact(ContactBuilder builder) {
-        this.firstName = builder.firstName;
-        this.lastName = builder.lastName;
-        this.age = builder.age;
-        this.phoneNo = builder.phoneNo;
-        this.streetAddress = builder.streetAddress;
-        this.streetNum = builder.streetNum;
-        this.county = builder.county;
-        this.zipCode = builder.zipCode;
+    // Huge constructor.
+    public Contact(String fname, String lname, String age, String phone, String streetAddress, String streetNum,
+                   String county, String zipCode) {
+        this.fname = fname;
+        this.lname = lname;
+        this.age = age;
+        this.phone = phone;
+        this.streetAddress = streetAddress;
+        this.streetNum = streetNum;
+        this.county = county;
+        this.zipCode = zipCode;
     }
 
-
-    public String getFirstName() {
-        return firstName;
+    public String getFname() {
+        return fname;
     }
 
-
-
-    public String getLastName() {
-        return lastName;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
+    public String getLname() {
+        return lname;
+    }
 
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
 
     public String getAge() {
-        return String.valueOf(age);
+        return age;
     }
 
-    public String getPhoneNo() {
-        return phoneNo;
+    public void setAge(String age) {
+        this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "name " + this.firstName+ " " + this.lastName + " \nage " +this.age +
-                " \naddress " + this.streetAddress + " " + this.streetNum + " \ncounty " + this.county + " \nzip " + this.zipCode;
+    public String getPhone() {
+        return phone;
     }
 
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-    public static class ContactBuilder {
+    public String getStreetAddress() {
+        return streetAddress;
+    }
 
-        private String firstName;
-        private String lastName;
-        private int age;
-        private String phoneNo;
-        public String streetAddress;
-        public String streetNum;
-        public String county;
-        public String zipCode;
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
+    }
 
+    public String getStreetNum() {
+        return streetNum;
+    }
 
-        public ContactBuilder(String firstName, String lastName, int age, String phoneNo, String streetAddress,
-                              String streetNum, String county, String zipCode) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.age = age;
-            this.phoneNo = phoneNo;
-            this.streetAddress = streetAddress;
-            this.streetNum = streetNum;
-            this.county = county;
-            this.zipCode = zipCode;
-        }
+    public void setStreetNum(String streetNum) {
+        this.streetNum = streetNum;
+    }
 
+    public String getCounty() {
+        return county;
+    }
 
-        public ContactBuilder fName() {
-            System.out.print("First Name: ");
-            this.firstName = sc.next();
-            return this;
-        }
+    public void setCounty(String county) {
+        this.county = county;
+    }
 
-        public ContactBuilder lName() {
-            System.out.print("Last Name: ");
-            this.lastName = sc.next();
-            return this;
-        }
+    public String getZipCode() {
+        return zipCode;
+    }
 
-        public ContactBuilder age() {
-            System.out.print("Age: ");
-            this.age = sc.nextInt();
-            return this;
-        }
-
-
-        public String getPhoneNo() {
-            return phoneNo;
-        }
-
-        public ContactBuilder phoneNo() {
-            System.out.print("Phone: ");
-            this.phoneNo = sc.next();
-            return this;
-        }
-
-        public ContactBuilder streetAddress() {
-            System.out.print("StreetAddress: ");
-            this.streetAddress = sc.next();
-            return this;
-        }
-
-        public ContactBuilder streetNum() {
-            System.out.print("Street Number: ");
-            this.streetNum = sc.next();
-            return this;
-        }
-
-        public ContactBuilder county() {
-            System.out.print("Country: ");
-            this.county = sc.next();
-            return this;
-        }
-
-        public ContactBuilder zipCode() {
-            System.out.print("Zip Code: ");
-            this.zipCode = sc.next();
-            return this;
-        }
-        public Contact build() {
-            Contact contact = new Contact(this);
-            return contact;
-        }
-
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 }
