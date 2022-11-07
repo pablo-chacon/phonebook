@@ -1,73 +1,108 @@
 import contactDB.Contact;
 import contactDB.*;
 
+import java.sql.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Application {
 
     private static DataBase<Contact> contactdb;
+
     //static public List<HashMap<Contact,Address>> phoneBook = new ArrayList<>();
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-//        String[] inputParams = new String[] {sc.next()};
-        contactdb = new ContactDataBase();
+       /* PhoneBook database = new PhoneBook();
+        database.defaultContact();
+
+        for (int i = 0; i <3 ; i++) {
+            database.addContact();
+        }*/
+
+
+//        phoneBook.add(contact1);
+//        phoneBook.add(contact2);
+//        phoneBook.add(contact3);
+
+//        printAllContacts();
+//        System.out.println();
 
 
 
-
-
-
-//            contactdb.getContact(0);
-
-
-
-//        Contact contact = contactdb.addContact(new Contact("FirstName","LastName","23",
-//                "phone number","Street","number","Country","09854"));
-
-        /*"First Name", "Last name", "Age",
-                "Phone number", "Street", "Number", "County", "Zip code"*/
-            // get by first name, loop through.
-//            contactdb.getAll().forEach(contacts -> System.out.println(contact.getFname()));
-//            // Last name,
-//            contactdb.getAll().forEach(contacts -> System.out.println(contact.getLname()));
-//            // Street address,
-//            contactdb.getAll().forEach(contacts -> System.out.println(contact.getStreetAddress()));
-//            // Phone.
-//            contactdb.getAll().forEach(contacts -> System.out.println(contact.getPhone()));
-////         Update contact by parameters Array.
-//            contactdb.update(contact, new String[]{"Torsten", "lname", "age", "077005485", "street", "num", "county", "zip"});
-//            System.out.println(contact.getFname());
-
-
-
-//            System.out.println(contactdb.getContact(0));
-//            System.out.println(contactdb.getAll());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        boolean running = true;
-//        while(running) {
+        /*Contact contact = new Contact("Marcus", "Groth", "23", "4535353",
+                "", "", "", "")
+                .fName()
+                .lName()
+                .age()
+                .streetAddress()
+                .streetNum()
+                .county()
+                .zipCode()
+                .build(); */
 //
+//
+//
+//        phoneBook.add(contact);
+//
+//        for (HashMap contact1 : phoneBook) {
+//            System.out.println(contact1);
+//        }
+
+        Scanner sc = new Scanner(System.in);
+        contactdb = new ContactDataBase();
+        
+        Contact contact = contactdb.addContact(new Contact(0,"foo", "bar", "12",
+                "0888866660", "Foogatan", "1", "barmanland", "11122"));
+
+        // get by first name, loop through.
+        contactdb.getAll().forEach(contacts -> System.out.println(contact.getFname()));
+        // Last name,
+        contactdb.getAll().forEach(contacts -> System.out.println(contact.getLname()));
+        // Street address,
+        contactdb.getAll().forEach(contacts -> System.out.println(contact.getStreetAddress()));
+        // Phone.
+        contactdb.getAll().forEach(contacts -> System.out.println(contact.getPhone()));
+        // Update contact by parameters Array.
+
+
+        contactdb.update(contact, new String[]{"Torsten", "Flink", "56", "077005485", "street", "num", "county", "zip"});
+        System.out.println(contact.getFname() + "\n" + contact.getPhone());
+
+        System.out.println(contactdb.getContact(0));
+        System.out.println(contactdb.getAll());
+
+        contactdb.delete(contact);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        System.out.println(whatItIs.get(0) + ": " + contact.get(s.get(0)));
+
+
+//        for (int i = 0; i < phoneBook.size(); i++) {
+//            System.out.println("First Name: " + phoneBook.get(i).get("First Name"));
+//            System.out.println("Last Name: " + phoneBook.get(i).get("Last Name"));
+//            System.out.println("Age: " + phoneBook.get(i).get("Age"));
+//            System.out.println("Phone: " + phoneBook.get(i).get("Phone"));
+//            System.out.println("Street Address: " + phoneBook.get(i).get("Street Address"));
+//            System.out.println("Country: " + phoneBook.get(i).get("Country"));
+//            System.out.println("Zip Code: " + phoneBook.get(i).get("Zip Code"));
+//        }
+
+
+
 //
 //            Scanner sc = new Scanner(System.in);
 //            HashMap<String, String> contactNum = new HashMap<>();
@@ -136,7 +171,7 @@ public class Application {
 
         // Start of the program
 
-        boolean isRunning = true;
+   /*     boolean isRunning = true;
 
 
         while (isRunning) {
@@ -152,30 +187,36 @@ public class Application {
 
 
                 if (userInput.equals("1")) {
-
+                    //Create
                     while (true) {
-                        Contact contact = contactdb.addContact(new Contact("FirstName","LastName","23",
-                                "phone number","Street","number","Country","09854"));
-                        System.out.println("\nCreate Contact (y/n)");
+                        System.out.println("Create Contact (y/n)");
                         userInput = askUserForInput();
+                        if (userInput.equals("y")) {
+                            HashMap contact = createContact();
+                            phoneBook.add(contact);
+                            printAllContacts();
+                        } else {
 
-                        if (userInput.equals("n")) {
-                           break;
+                            break;
                         }
                     }
+
+
+                    // ask user to input: firstName, surname, contactAge, adress, phone-number
+
+                    // if phone-number is not similar to a phone-number already exist in phone book
+                    //add new contact to phone book
+                    // else
+                    // deny the request and print out an error messages
                 } else if (userInput.equals("2")) {
                     // read contacts
                     String input = askUserForInput();
 
 
                 } else if (userInput.equals("3")) {
-                    System.out.println(contactdb.getContact(0).printContact());
-//                    contactdb.update(contactdb.getContact(0), new String[]{"Torsten", "lname", "age", "077005485", "street", "num", "county", "zip"});
                     //Update - att kunna uppdatera en profils kontaktuppgifter
-
                 } else if (userInput.equals("4")) {
                     //Delete - att kunna ta bort en profil
-                    contactdb.delete(contactdb.getContact(0));
                 } else if (userInput.equals("5")) {
                     //Go backward to previous menu
                 }
@@ -244,26 +285,19 @@ public class Application {
 
         String userName = "Admin";
         String password = "1234";
-        for (int i = 0; i < 3; i++) {
-            System.out.print("Please enter your user name: ");
-            String inputUserName = scanner.nextLine();
 
-            System.out.print("Please enter your password: ");
-            String inputPassword = scanner.nextLine();
+        System.out.print("Please enter your user name: ");
+        String inputUserName = scanner.nextLine();
 
-            if (inputUserName.equalsIgnoreCase(userName) && (inputPassword.equals(password))) {
-                System.out.println("You are logged in");
-                break;
-            } else if (i>1) {
-                System.out.println();
-                main(null);
-            } else {
-                System.out.println("Invalid user name or password");
-            }
+        System.out.print("Please enter your password: ");
+        String inputPassword = scanner.nextLine();
+
+        if (inputUserName.equalsIgnoreCase(userName) && (inputPassword.equals(password))) {
+            System.out.println("You are logged in");
+        } else {
+            System.out.println("Invalid user name or password");
         }
     }
-
-
     // public ContactDB findContactDB(int phoneNo) {
 //    for (ContactDB l: list) {
 //    if(l.getPhoneNo() == phoneNo) {
@@ -304,22 +338,22 @@ public class Application {
 //        }
 //    }
 
-    //static public HashMap createContact() {
-//                Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth",
-//                2, "4535353", "", "", "")
-//                .fName("foo")
-//                .lName("bar")
-//                .age(4)
-//                .streetAddress("bargatan")
-//                .streetNum("23")
-//                .county("lään")
-//                .zipCode("111222")
-//                .build();
-        /*Address addressInfo = new Address.AddressBuilder("Skolvägen", "6", "Sweden", "98432")
+   /* static public HashMap createContact() {
+                Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth",
+                2, "4535353", "", "", "")
+                .fName("foo")
+                .lName("bar")
+                .age(4)
+                .streetAddress("bargatan")
+                .streetNum("23")
+                .county("lään")
+                .zipCode("111222")
+                .build();
+        Address addressInfo = new Address.AddressBuilder("Skolvägen", "6", "Sweden", "98432")
 
-                .build();*/
+                .build();
 
-        /*LinkedHashMap<String, String> contact = new LinkedHashMap<>();
+        LinkedHashMap<String, String> contact = new LinkedHashMap<>();
         contact.put("First Name", contactInfo.getFirstName());
         contact.put("Last Name", contactInfo.getLastName());
         contact.put("Age", contactInfo.getAge());
@@ -342,6 +376,7 @@ public class Application {
          int input = Integer.parseInt(askUserForInput());
          phoneBook.remove(input);
     }*/
+
 
 
 }

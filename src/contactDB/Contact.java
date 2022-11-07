@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Contact {
     Scanner sc = new Scanner(System.in);
 
+    public int id;
+
     private String fname;
     private String lname;
     private String age;
@@ -14,10 +16,11 @@ public class Contact {
     private String streetNum;
     private String county;
     private String zipCode;
-    private int id;
 
     // Huge constructor.
-    public Contact(String fname, String lastName, String age, String phone_number, String street, String number, String county, String zipCode) {
+    public Contact(int id, String fname, String lastName, String age, String phone_number, String street,
+                   String number, String county, String zipCode) {
+        this.id = id;
         setFname();
         setLname();
         setAge();
@@ -77,7 +80,7 @@ public class Contact {
 
         System.out.print("Phone: ");
         this.phone = String.valueOf(sc.next());
-        if (phone.length() == 10){
+        if (this.phone.length() == 10){
 
         }else {
             System.out.println("");
@@ -128,5 +131,11 @@ public class Contact {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.fname + " " + this.lname + " Age: " + this.age + " Street: " + this.streetAddress +
+                " " + this.streetNum + " County: " + this.county + " Zip code: " + this.zipCode;
     }
 }

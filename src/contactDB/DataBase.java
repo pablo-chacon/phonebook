@@ -3,7 +3,7 @@ import java.util.List;
 
 public interface DataBase<Contact> {
 
-    Contact getContact(long id);
+    Contact getContact(int id);
 
     List<Contact> getAll();
 
