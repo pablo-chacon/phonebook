@@ -3,8 +3,9 @@ package contactDB;
 
 import java.util.Scanner;
 
+
 public class Contact {
-    Scanner sc = new Scanner(System.in);
+    static  public Scanner sc = new Scanner(System.in);
 
     public int id;
 
@@ -77,15 +78,23 @@ public class Contact {
 
 
     public void setPhone() {
-
-        System.out.print("Phone: ");
-        this.phone = String.valueOf(sc.next());
-        if (this.phone.length() == 10){
-
-        }else {
-            System.out.println("");
-        }
+        this.phone = phoneLenght();
     }
+     static  public String phoneLenght(){
+        String phone = "";
+        while (true){
+            System.out.print("Phone: ");
+            phone = sc.next();
+
+            if(phone.length() != 10){
+                System.out.println("Invalid phone number");
+            } else {
+                break;
+            }
+        }
+        return phone;
+     }
+
 
     public String getStreetAddress() {
         return streetAddress;
