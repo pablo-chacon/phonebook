@@ -14,8 +14,7 @@ public class Contact {
     public String zipCode;
 
     // Huge constructor.
-    public Contact(String fname, String lname, String age, String phone, String streetAddress, String streetNum,
-                   String county, String zipCode) {
+    public Contact(String fname) {
         this.fname = fname;
         this.lname = lname;
         this.age = age;

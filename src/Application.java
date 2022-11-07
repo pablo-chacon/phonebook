@@ -1,6 +1,8 @@
 import contactDB.Contact;
 import contactDB.*;
 
+import java.util.Scanner;
+
 public class Application {
 
     private static DataBase<Contact> contactdb;
@@ -25,16 +27,16 @@ public class Application {
 
 
 
-//        Contact contactInfo = new Contact.ContactBuilder("Marcus", "Groth", "23", "4535353")
-//                .fName()
-//                .lName()
-//                .age()
-//                .build();
-//                .streetAddress()
-//                .streetNum()
-//                .county()
-//                .zipCode()
-//                .build();
+        /*Contact contact = new Contact("Marcus", "Groth", "23", "4535353",
+                "", "", "", "")
+                .fName()
+                .lName()
+                .age()
+                .streetAddress()
+                .streetNum()
+                .county()
+                .zipCode()
+                .build(); */
 //
 //
 //
@@ -43,10 +45,15 @@ public class Application {
 //        for (HashMap contact1 : phoneBook) {
 //            System.out.println(contact1);
 //        }
-        contactdb = new ContactDataBase();
-        Contact contact = contactdb.addContact(new Contact("First Name", "Last name", "Age",
-                "Phone number", "Street", "Number", "County", "Zip code"));
 
+        Scanner sc = new Scanner(System.in);
+        String[] inputParams = new String[] {sc.next()};
+        contactdb = new ContactDataBase();
+        Contact contact = contactdb.addContact(new Contact(inputParams.toString()));
+
+
+        /*"First Name", "Last name", "Age",
+                "Phone number", "Street", "Number", "County", "Zip code"*/
         // get by first name, loop through.
         contactdb.getAll().forEach(contacts -> System.out.println(contact.getFname()));
         // Last name,
