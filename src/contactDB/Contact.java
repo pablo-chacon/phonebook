@@ -14,15 +14,15 @@ public class Contact {
     public String zipCode;
 
     // Huge constructor.
-    public Contact(String fname) {
+    public Contact(String fname, String lastName, String age, String phone_number, String street, String number, String county, String zipCode) {
         this.fname = fname;
         this.lname = lname;
-        this.age = age;
+        this.age = this.age;
         this.phone = phone;
         this.streetAddress = streetAddress;
         this.streetNum = streetNum;
-        this.county = county;
-        this.zipCode = zipCode;
+        this.county = this.county;
+        this.zipCode = this.zipCode;
     }
 
     public String getFname() {

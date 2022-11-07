@@ -32,6 +32,7 @@ public class ContactDataBase implements DataBase<Contact> {
     @Override
     public void update(Contact contact, String[] params) {
         contact.setFname(params[0]);
+        contact.setStreetAddress(params[0]);
         contact.setPhone(params[0]);
 
         contacts.add(contact);
