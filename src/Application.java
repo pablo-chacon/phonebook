@@ -193,6 +193,7 @@ public class Application {
                 //Log in as Guest
             } else if (userInput.equals("2")) {
 
+                printOutGuestOptions();
                 userInput = askUserForInput();
 
                 // Create Contact
@@ -217,6 +218,8 @@ public class Application {
             } else if (userInput.equals("3")) {
                 isRunning = false;
                 System.out.println("\nHave a nice day my friend");
+            } else {
+                System.out.println("Invalid input");
             }
         }
 
@@ -237,7 +240,7 @@ public class Application {
     }
     static public void printOutGuestOptions(){
         System.out.println("""
-                 \\nSelect one of following options
+                Select one of following options
                 [1] Create contact
                 [2] Read contact
                 [3] Go back
@@ -249,6 +252,7 @@ public class Application {
                 Login as 
                 [1] Admin
                 [2] Guest
+                [3] Program shut down
                 """);
     }
 
@@ -263,14 +267,7 @@ System.out.println("""
                 """);
     }
 
-    static public void printOuGtuestOptions() {
-        System.out.println("""
-                \nSelect one of following options
-                [1] Create contact
-                [2] Read contact
-                [3] Go back
-                """);
-    }
+
 
     public static void confirmPassword() {
         Scanner scanner = new Scanner(System.in);

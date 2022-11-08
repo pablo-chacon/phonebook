@@ -153,7 +153,7 @@ public class Contact {
     }
 
     public void setCounty() {
-        System.out.print("Country: ");
+        System.out.print("County: ");
         this.zipCode = String.valueOf(sc.next());
 
     }
