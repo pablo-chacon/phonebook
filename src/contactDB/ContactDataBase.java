@@ -28,79 +28,152 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
     @Override
     public void searchByFirstName() {
-        System.out.print("Enter a first name: ");
-        String userInput = sc.next().toLowerCase();
 
+        while (true) {
 
-        for (int i = 0; i < contacts.size(); i++) {
-            Contact contact = contacts.get(i);
-            String firstName = contact.getFname().toLowerCase();
+            boolean findContent = false;
+            List<Contact> findContacts = new ArrayList<>();
 
-            if (userInput.equals(firstName)) {
-                int id = contact.getId();
-                System.out.println("[" + (id) + "] " + contact);
+            System.out.print("Enter a first name: ");
+            String userInput = sc.next().toLowerCase();
+
+            for (int i = 0; i < contacts.size(); i++) {
+
+                Contact contact = contacts.get(i);
+                String firstName = contact.getFname().toLowerCase();
+
+                if (userInput.equals(firstName)) {
+
+                    int id = contact.getId();
+                    Contact findContact = contacts.get(id);
+                    findContacts.add(findContact);
+                }
             }
-            else {
-                System.out.println("Invalid");
+            if (findContacts.isEmpty()) {
+                System.out.println("Invalid search");
+            } else {
+                for (Contact findContact : findContacts) {
+                    int id = findContact.getId();
+                    System.out.println("[" + (id) + "] " + findContact);
+
+                }
+
+                break;
             }
         }
+
+
     }
 
     @Override
     public void searchByLastName() {
-        System.out.print("Enter a last name: ");
-        String userInput = sc.next().toLowerCase();
-        for (int i = 0; i < contacts.size(); i++) {
-            Contact contact = contacts.get(i);
-            String lastName = contact.getLname().toLowerCase();
+
+        while (true) {
+
+            List<Contact> findContacts = new ArrayList<>();
+            System.out.print("Enter a last name: ");
+            String userInput = sc.next().toLowerCase();
+
+            for (int i = 0; i < contacts.size(); i++) {
+                Contact contact = contacts.get(i);
+                String lastName = contact.getLname().toLowerCase();
 
 
-            if (userInput.equals(lastName)) {
-                int id = contact.getId();
-                System.out.println("[" + (id) + "] " + contact);
+                if (userInput.equals(lastName)) {
+                    int id = contact.getId();
+                    Contact findContact = contacts.get(id);
+                    findContacts.add(findContact);
+                }
+            }
+
+            if (findContacts.isEmpty()) {
+                System.out.println("Invalid search");
+            } else {
+                for (Contact findContact : findContacts) {
+                    int id = findContact.getId();
+                    System.out.println("[" + (id) + "] " + findContact);
+                }
+
+                break;
             }
         }
+
+
     }
 
     @Override
     public void searchByAddress() {
-        System.out.print("enter a Address: ");
-        String userInput = sc.next().toLowerCase();
 
-        for (int i = 0; i < contacts.size(); i++) {
-            Contact contact = contacts.get(i);
-            String address = contact.getStreetAddress().toLowerCase();
+        while (true) {
 
-            if (userInput.equals(address)) {
-                int id = contact.getId();
-                System.out.println("[" + (id) + "] " + contact);
+            List<Contact> findContacts = new ArrayList<>();
+            System.out.print("enter a Address: ");
+            String userInput = sc.next().toLowerCase();
+
+            for (int i = 0; i < contacts.size(); i++) {
+                Contact contact = contacts.get(i);
+                String address = contact.getStreetAddress().toLowerCase();
+
+                if (userInput.equals(address)) {
+                    int id = contact.getId();
+                    Contact findContact = contacts.get(id);
+                    findContacts.add(findContact);
+                }
+            }
+            if (findContacts.isEmpty()) {
+                System.out.println("Invalid search");
+            } else {
+                for (Contact findContact : findContacts) {
+                    int id = findContact.getId();
+                    System.out.println("[" + (id) + "] " + findContact);
+                }
+
+                break;
             }
         }
+
     }
 
     @Override
     public void freeSearch() {
-        System.out.print("enter a free search: ");
-        String userInput = sc.next().toLowerCase();
-        int letters = userInput.length();
 
-        for (int i = 0; i < contacts.size(); i++) {
-            Contact contact = contacts.get(i);
+        while (true) {
+            List<Contact> findContacts = new ArrayList<>();
+            System.out.print("enter a free search: ");
+            String userInput = sc.next().toLowerCase();
+            int letters = userInput.length();
 
-            for (int j = 0; j < 8; j++) {
-                String text = contact.groupOfStrings().get(j).toLowerCase();
-                try {
-                    text = text.substring(0, letters);
+            for (int i = 0; i < contacts.size(); i++) {
+                Contact contact = contacts.get(i);
 
-                } catch (StringIndexOutOfBoundsException ignored) {
+                for (int j = 0; j < 8; j++) {
+                    String text = contact.groupOfStrings().get(j).toLowerCase();
+                    try {
+                        text = text.substring(0, letters);
 
+                    } catch (StringIndexOutOfBoundsException ignored) {
+
+                    }
+                    if (userInput.equals(text)) {
+                        int id = contact.getId();
+                        Contact findContact = contacts.get(id);
+                        findContacts.add(findContact);
+                    }
                 }
-                if (userInput.equals(text)) {
-                    int id = contact.getId();
-                    System.out.println("[" + (id) + "] " + contact);
+
+            }
+            if (findContacts.isEmpty()) {
+                System.out.println("Invalid search");
+            } else {
+                for (Contact findContact : findContacts) {
+                    int id = findContact.getId();
+                    System.out.println("[" + (id) + "] " + findContact);
                 }
+
+                break;
             }
         }
+
     }
 
     @Override

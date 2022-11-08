@@ -6,11 +6,11 @@ public class Administrator implements Crud {
     private String password;
     private boolean isLoggedIn;
 
-    public Administrator(String userName, String password, Boolean isLoggedIn) {
+    public Administrator(String userName, String password) {
 
         this.userName = userName;
         this.password = password;
-        this.isLoggedIn = isLoggedIn;
+//        this.isLoggedIn = isLoggedIn;
 
     this.userName = userName;
     this.password = password;

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Application {
+    static  public  Scanner sc = new Scanner(System.in);
 
     private static DataBase<Contact> contactdb;
     //static public List<HashMap<Contact,Address>> phoneBook = new ArrayList<>();
@@ -14,6 +15,7 @@ public class Application {
         Scanner sc = new Scanner(System.in);
 //        String[] inputParams = new String[] {sc.next()};
         ContactDataBase contactdb = new ContactDataBase();
+//        contactdb.searchByFirstName();
 //        contactdb.searchByFirstName();
 //        contactdb.searchByLastName();
 //        System.out.println(contactdb.getContact(0).printContact());
@@ -152,6 +154,7 @@ public class Application {
                     String choice = askUserForInput();
 
                     if (choice.equals("1")) {
+
                         contactdb.searchByFirstName();
                         int id = Integer.parseInt(askUserForInput());
                         Contact contact = contactdb.getContact(id);
@@ -165,17 +168,40 @@ public class Application {
                         }
                     } else if (choice.equals("2")) {
                         contactdb.searchByLastName();
+                        int id = Integer.parseInt(askUserForInput());
+                        Contact contact = contactdb.getContact(id);
                         menuUpdateAndRemove();
                         choice = askUserForInput();
+
+                        if (choice.equals("1")){
+                            contactdb.update(contactdb.getContact(0), new String[]{"Torsten", "lname", "age", "077005485", "street", "num", "county", "zip"});
+                        } else if (choice.equals("2")){
+                            contactdb.delete(contact);
+                        }
                     } else if (choice.equals("3")) {
                         contactdb.searchByAddress();
+                        int id = Integer.parseInt(askUserForInput());
+                        Contact contact = contactdb.getContact(id);
                         menuUpdateAndRemove();
                         choice = askUserForInput();
+
+                        if (choice.equals("1")){
+                            contactdb.update(contactdb.getContact(0), new String[]{"Torsten", "lname", "age", "077005485", "street", "num", "county", "zip"});
+                        } else if (choice.equals("2")){
+                            contactdb.delete(contact);
+                        }
                     } else if (choice.equals("4")) {
                         contactdb.freeSearch();
-                        int choiceInt = Integer.parseInt(askUserForInput());
+                        int id = Integer.parseInt(askUserForInput());
+                        Contact contact = contactdb.getContact(id);
                         menuUpdateAndRemove();
                         choice = askUserForInput();
+
+                        if (choice.equals("1")){
+                            contactdb.update(contactdb.getContact(0), new String[]{"Torsten", "lname", "age", "077005485", "street", "num", "county", "zip"});
+                        } else if (choice.equals("2")){
+                            contactdb.delete(contact);
+                        }
                     }
 
                     // Update Contact
@@ -273,16 +299,17 @@ System.out.println("""
     }
 
     public static void confirmPassword() {
-        Scanner scanner = new Scanner(System.in);
 
-        String userName = "Admin";
-        String password = "1234";
+        Administrator admin = new Administrator("Admin","1234");
+        String userName = admin.getUserName();
+        String password = admin.getPassword();
+
         for (int i = 0; i < 3; i++) {
             System.out.print("Please enter your user name: ");
-            String inputUserName = scanner.nextLine();
+            String inputUserName = sc.nextLine();
 
             System.out.print("Please enter your password: ");
-            String inputPassword = scanner.nextLine();
+            String inputPassword = sc.nextLine();
 
             if (inputUserName.equalsIgnoreCase(userName) && (inputPassword.equals(password))) {
                 System.out.println("You are logged in");
