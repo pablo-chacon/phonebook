@@ -15,6 +15,7 @@ public class Application {
         Scanner sc = new Scanner(System.in);
 //        String[] inputParams = new String[] {sc.next()};
         ContactDataBase contactdb = new ContactDataBase();
+
 //        contactdb.searchByFirstName();
 //        contactdb.searchByFirstName();
 //        contactdb.searchByLastName();
@@ -132,7 +133,7 @@ public class Application {
             if (userInput.equals("1")) {
                 confirmPassword();
 
-                printOutAdminOptions();
+                printOutUserOptions();
                 userInput = askUserForInput();
 
                 // Create Contact
@@ -219,7 +220,7 @@ public class Application {
                 //Log in as Guest
             } else if (userInput.equals("2")) {
 
-                printOutGuestOptions();
+                printOutUserOptions();
                 userInput = askUserForInput();
 
                 // Create Contact
@@ -264,15 +265,15 @@ public class Application {
         System.out.print("Input: ");
         return sc.nextLine();
     }
-    static public void printOutGuestOptions(){
-        System.out.println("""
-                Select one of following options
-                [1] Create contact
-                [2] Read contact
-                [3] Go back
-                """);
+//    static public void printOutGuestOptions(){
+//        System.out.println("""
+//                Select one of following options
+//                [1] Create contact
+//                [2] Read contacts
+//                [3] Go back
+//                """);
 
-}
+
     static public void printMainMenu(){
         System.out.println("""
                 Login as 
@@ -282,14 +283,11 @@ public class Application {
                 """);
     }
 
-static public void printOutAdminOptions() {
+static public void printOutUserOptions() {
 System.out.println("""
                 \nSelect one of following options
                 [1] Create contact
-                [2] Read contact
-                [3] Update contact
-                [4] Delete contact
-                [5] Go back
+                [2] Read contacts
                 """);
     }
 

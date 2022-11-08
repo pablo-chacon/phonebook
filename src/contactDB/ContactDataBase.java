@@ -64,7 +64,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
 
     }
-
     @Override
     public void searchByLastName() {
 
