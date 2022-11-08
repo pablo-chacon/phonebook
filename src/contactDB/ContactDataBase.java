@@ -37,7 +37,11 @@ public class ContactDataBase implements DataBase<Contact>, Search {
             String firstName = contact.getFname().toLowerCase();
 
             if (userInput.equals(firstName)) {
-                System.out.println("[" + (1+i) + "]" + contact);
+                int id = contact.getId();
+                System.out.println("[" + (id) + "] " + contact);
+            }
+            else {
+                System.out.println("Invalid");
             }
         }
     }
@@ -52,7 +56,8 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
 
             if (userInput.equals(lastName)) {
-                System.out.println("[" + (1+i) + "]" + contact);
+                int id = contact.getId();
+                System.out.println("[" + (id) + "] " + contact);
             }
         }
     }
@@ -67,7 +72,8 @@ public class ContactDataBase implements DataBase<Contact>, Search {
             String address = contact.getStreetAddress().toLowerCase();
 
             if (userInput.equals(address)) {
-                System.out.println("[" + (1+i) + "]" + contact);
+                int id = contact.getId();
+                System.out.println("[" + (id) + "] " + contact);
             }
         }
     }
@@ -90,7 +96,8 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
                 }
                 if (userInput.equals(text)) {
-                    System.out.println("[" + (1+i) + "]" + contact);
+                    int id = contact.getId();
+                    System.out.println("[" + (id) + "] " + contact);
                 }
             }
         }
@@ -121,7 +128,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         contact.setStreetNum();
         contact.setCounty();
         contact.setZipCode();
-        contacts.add(contact);
     }
 
     @Override

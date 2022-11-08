@@ -14,10 +14,13 @@ public class Application {
         Scanner sc = new Scanner(System.in);
 //        String[] inputParams = new String[] {sc.next()};
         ContactDataBase contactdb = new ContactDataBase();
-        contactdb.searchByFirstName();
-        contactdb.searchByLastName();
-        contactdb.searchByAddress();
-        contactdb.freeSearch();
+//        contactdb.searchByFirstName();
+//        contactdb.searchByLastName();
+//        System.out.println(contactdb.getContact(0).printContact());
+//        contactdb.searchByFirstName();
+//        contactdb.searchByLastName();
+//        contactdb.searchByAddress();
+//        contactdb.freeSearch();
 
 
 //            contactdb.getContact(0);
@@ -120,7 +123,7 @@ public class Application {
 
 
         while (isRunning) {
-
+            printMainMenu();
             String userInput = askUserForInput();
 
             //Log in as Admin
@@ -150,15 +153,28 @@ public class Application {
 
                     if (choice.equals("1")) {
                         contactdb.searchByFirstName();
+                        int id = Integer.parseInt(askUserForInput());
+                        Contact contact = contactdb.getContact(id);
+                        menuUpdateAndRemove();
                         choice = askUserForInput();
+
+                        if (choice.equals("1")){
+                            contactdb.update(contactdb.getContact(0), new String[]{"Torsten", "lname", "age", "077005485", "street", "num", "county", "zip"});
+                        } else if (choice.equals("2")){
+                            contactdb.delete(contact);
+                        }
                     } else if (choice.equals("2")) {
                         contactdb.searchByLastName();
+                        menuUpdateAndRemove();
                         choice = askUserForInput();
                     } else if (choice.equals("3")) {
                         contactdb.searchByAddress();
+                        menuUpdateAndRemove();
                         choice = askUserForInput();
                     } else if (choice.equals("4")) {
                         contactdb.freeSearch();
+                        int choiceInt = Integer.parseInt(askUserForInput());
+                        menuUpdateAndRemove();
                         choice = askUserForInput();
                     }
 
@@ -170,11 +186,13 @@ public class Application {
                     // Delete Contact
                 } else if (userInput.equals("4")) {
                     contactdb.delete(contactdb.getContact(0));
+//                    contactdb.getContact()
+//                    contactdb.delete();
                 }
 
                 //Log in as Guest
             } else if (userInput.equals("2")) {
-                printOutGuestOptions();
+
                 userInput = askUserForInput();
 
                 // Create Contact
@@ -206,15 +224,36 @@ public class Application {
     }
 
 
-
+    static public void menuUpdateAndRemove(){
+        System.out.println("""
+                [1] Update Contact
+                [2] Remove Contact
+                """);
+    }
     static public String askUserForInput() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Input: ");
         return sc.nextLine();
     }
-
-    static public void printOutAdminOptions() {
+    static public void printOutGuestOptions(){
         System.out.println("""
+                 \\nSelect one of following options
+                [1] Create contact
+                [2] Read contact
+                [3] Go back
+                """);
+
+}
+    static public void printMainMenu(){
+        System.out.println("""
+                Login as 
+                [1] Admin
+                [2] Guest
+                """);
+    }
+
+static public void printOutAdminOptions() {
+System.out.println("""
                 \nSelect one of following options
                 [1] Create contact
                 [2] Read contact
@@ -224,7 +263,7 @@ public class Application {
                 """);
     }
 
-    static public void printOutGuestOptions() {
+    static public void printOuGtuestOptions() {
         System.out.println("""
                 \nSelect one of following options
                 [1] Create contact
