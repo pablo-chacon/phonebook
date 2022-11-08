@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b31fd342-1753-4026-85db-b01b218bf389" name="Changes" comment="Data Access Object">
+    <list default="true" id="b31fd342-1753-4026-85db-b01b218bf389" name="Changes" comment="Apa">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/contactDB/Search.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contactDB/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/contactDB/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/contactDB/ContactDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/contactDB/ContactDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contactDB/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/contactDB/DataBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,6 +78,14 @@
       <workItem from="1667511453050" duration="150000" />
       <workItem from="1667512364001" duration="62000" />
       <workItem from="1667548789464" duration="1692000" />
+      <workItem from="1667834129481" duration="96000" />
+      <workItem from="1667834369999" duration="3885000" />
+      <workItem from="1667841285452" duration="7091000" />
+      <workItem from="1667848820018" duration="361000" />
+      <workItem from="1667849435007" duration="288000" />
+      <workItem from="1667852785090" duration="16000" />
+      <workItem from="1667860362977" duration="572000" />
+      <workItem from="1667894533854" duration="1111000" />
     </task>
     <task id="LOCAL-00001" summary="mainMenu">
       <created>1667298952064</created>
@@ -141,14 +149,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667808889875</updated>
     </task>
-    <task id="LOCAL-00010" summary="Data Access Object">
-      <created>1667811123437</created>
+    <task id="LOCAL-00010" summary="Apa">
+      <created>1667834070861</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1667811123437</updated>
+      <updated>1667834070861</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Apa">
+      <created>1667834084874</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1667834084874</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,26 +188,7 @@
     <MESSAGE value="classes and interfaces" />
     <MESSAGE value="pass" />
     <MESSAGE value="Data Access Object" />
-    <option name="LAST_COMMIT_MESSAGE" value="Data Access Object" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Application.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/contactDB/Contact.java</url>
-          <line>68</line>
-          <properties class="contactDB.Contact" method="setAge">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Apa" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apa" />
   </component>
 </project>

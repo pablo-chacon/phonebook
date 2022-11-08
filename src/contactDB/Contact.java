@@ -1,11 +1,14 @@
 package contactDB;
 // Contact POJO.
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class Contact {
-    static  public Scanner sc = new Scanner(System.in);
+    static public Scanner sc = new Scanner(System.in);
 
     public int id;
 
@@ -19,8 +22,7 @@ public class Contact {
     private String zipCode;
 
     // Huge constructor.
-    public Contact(int id, String fname, String lastName, String age, String phone_number, String street,
-                   String number, String county, String zipCode) {
+    public Contact(int id) {
         this.id = id;
         setFname();
         setLname();
@@ -30,6 +32,19 @@ public class Contact {
         setStreetNum();
         setCounty();
         setZipCode();
+
+    }
+
+    public Contact(int id, String fname, String lname, String age, String phone, String streetAddress, String streetNum, String county, String zipCode) {
+        this.id = id;
+        this.fname = fname;
+        this.lname = lname;
+        this.age = age;
+        this.phone = phone;
+        this.streetAddress = streetAddress;
+        this.streetNum = streetNum;
+        this.county = county;
+        this.zipCode = zipCode;
     }
 
     public String printContact() {
@@ -78,22 +93,41 @@ public class Contact {
 
 
     public void setPhone() {
-        this.phone = phoneLenght();
+        this.phone = digitsLimit();
     }
-     static  public String phoneLenght(){
+
+    static public String digitsLimit() {
         String phone = "";
-        while (true){
+
+        while (true) {
             System.out.print("Phone: ");
             phone = sc.next();
 
-            if(phone.length() != 10){
+            if (phone.length() > 16 || onlyDigits(phone)) {
+                System.out.println("Invalid phone number");
+            } else if (onlyDigits(phone)) {
                 System.out.println("Invalid phone number");
             } else {
                 break;
             }
         }
         return phone;
-     }
+    }
+
+    static public boolean onlyDigits(String value) {
+        boolean hasLetters = false;
+
+        for (int i = 0; i < value.length(); i++) {
+
+            if (!Character.isDigit(value.charAt(i))) {
+                hasLetters = true;
+            } else if (value.charAt(0) == '+') {
+                hasLetters = false;
+            } else
+                hasLetters = false;
+        }
+        return hasLetters;
+    }
 
 
     public String getStreetAddress() {
@@ -140,6 +174,10 @@ public class Contact {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List<String> groupOfStrings() {
+        return Arrays.asList(fname, lname, age, phone, streetAddress, streetNum, county, zipCode);
     }
 
     @Override
