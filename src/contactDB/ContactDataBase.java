@@ -29,12 +29,12 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     @Override
     public void searchByFirstName() {
         System.out.print("Enter a first name: ");
-        String userInput = sc.next();
+        String userInput = sc.next().toLowerCase();
 
 
         for (int i = 0; i < contacts.size(); i++) {
             Contact contact = contacts.get(i);
-            String firstName = contact.getFname();
+            String firstName = contact.getFname().toLowerCase();
 
             if (userInput.equals(firstName)) {
                 System.out.println("[" + (1+i) + "]" + contact);
@@ -45,10 +45,10 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     @Override
     public void searchByLastName() {
         System.out.print("Enter a last name: ");
-        String userInput = sc.next();
+        String userInput = sc.next().toLowerCase();
         for (int i = 0; i < contacts.size(); i++) {
             Contact contact = contacts.get(i);
-            String lastName = contact.getLname();
+            String lastName = contact.getLname().toLowerCase();
 
 
             if (userInput.equals(lastName)) {
@@ -60,11 +60,11 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     @Override
     public void searchByAddress() {
         System.out.print("enter a Address: ");
-        String userInput = sc.next();
+        String userInput = sc.next().toLowerCase();
 
         for (int i = 0; i < contacts.size(); i++) {
             Contact contact = contacts.get(i);
-            String address = contact.getStreetAddress();
+            String address = contact.getStreetAddress().toLowerCase();
 
             if (userInput.equals(address)) {
                 System.out.println("[" + (1+i) + "]" + contact);
@@ -75,14 +75,14 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     @Override
     public void freeSearch() {
         System.out.print("enter a free search: ");
-        String userInput = sc.next();
+        String userInput = sc.next().toLowerCase();
         int letters = userInput.length();
 
         for (int i = 0; i < contacts.size(); i++) {
             Contact contact = contacts.get(i);
 
             for (int j = 0; j < 8; j++) {
-                String text = contact.groupOfStrings().get(j);
+                String text = contact.groupOfStrings().get(j).toLowerCase();
                 try {
                     text = text.substring(0, letters);
 
