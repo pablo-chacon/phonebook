@@ -276,13 +276,28 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     @Override
     public void update(Contact contact) {
 
+        System.out.print("First Name: ");
         contact.setFname(sc.next());
+
+        System.out.print("Last Name: ");
         contact.setLname(sc.next());
+
+        System.out.print("Age: ");
         contact.setAge(sc.next());
+
+        System.out.print("Phone: ");
         contact.setPhone(sc.next());
+
+        System.out.print("Street Address: ");
         contact.setStreetAddress(sc.next());
+
+        System.out.print("Street Number: ");
         contact.setStreetNum(sc.next());
+
+        System.out.print("County: ");
         contact.setCounty(sc.next());
+
+        System.out.print("Zip Code: ");
         contact.setZipCode(sc.next());
     }
 

@@ -15,6 +15,8 @@ public class Application {
     public static void main(String[] args) {
         
         // Start of the program
+//        Contact contact = contactdb.getContact(0);
+//        contactdb.update(contact);
         printMainMenu();
         userInput = askUserForInput();
 
