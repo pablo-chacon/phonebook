@@ -118,8 +118,11 @@ public class Contact {
         boolean hasLetters = false;
 
         for (int i = 0; i < value.length(); i++) {
+            if (value.charAt(0) == '+'){
+                hasLetters = false;
+            }
 
-            if (!Character.isDigit(value.charAt(i))) {
+            else if (!Character.isDigit(value.charAt(i))) {
                 hasLetters = true;
             }
         }
