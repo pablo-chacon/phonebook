@@ -9,90 +9,99 @@ public class Application {
     static public boolean isRunning = true;
     static public int id = 2;
     static public String userInput = "";
+    static  public ContactDataBase contactdb = new ContactDataBase();
 
 
     public static void main(String[] args) {
 
-        ContactDataBase contactdb = new ContactDataBase();
 
+        printMainMenu();
+        userInput = askUserForInput();
 
         // Start of the program
         while (isRunning) {
-
-            printMainMenu();
-            userInput = askUserForInput();
-
-            //Log in as Admin
-            if (userInput.equals("1")) {
-
-                confirmPassword();
-                printOutUserOptions("Select one of following options",
-                        Arrays.asList("Create Contacts", "Read Contacts"));
-                userInput = askUserForInput();
-
-                // Create Contact
-                if (userInput.equals("1")) {
-                    contactdb.addContact();
-                    id++;
-
-                    // Read Contact
-                } else if (userInput.equals("2")) {
-
-                    printOutSearchOptions();
-                    contactdb.readContacts(askUserForInput());
-                    Contact contact = contactdb.pickContact();
-
-                    printOutUserOptions("Select one of following options"
-                            , Arrays.asList("Update Contact", "Delete Contact"));
-                    userInput = askUserForInput();
-
-                    // Update Contact
-                    if (userInput.equals("1")) {
-                        contactdb.update(contact);
-
-                        // Delete Contact
-                    } else if (userInput.equals("2")) {
-                        contactdb.delete(contact);
-                    }
-                }
-
-                // Log in as Guest
+            if (userInput.equals("1")){
+                runAsAdmin();
             } else if (userInput.equals("2")) {
-                printOutUserOptions("Select one of following options",
-                        Arrays.asList("Create Contacts", "Read Contacts"));
-                userInput = askUserForInput();
-
-                // Create Contact
-                if (userInput.equals("1")) {
-                    contactdb.addContact();
-
-                    // Read Contact
-                } else if (userInput.equals("2")) {
-                    printOutSearchOptions();
-                    contactdb.readContacts(askUserForInput());
-                    Contact contact = contactdb.pickContact();
-
-                    printOutUserOptions("Select one of following options"
-                            , Arrays.asList("Update Contact", "Delete Contact"));
-
-                    // Update Contact
-                    if (userInput.equals("3")) {
-                        contactdb.update(contact);
-
-                        // Delete Contact
-                    } else if (userInput.equals("4")) {
-                        contactdb.delete(contact);
-                    }
-                }
-            } else if (userInput.equals("3")) {
-                isRunning = false;
-                System.out.println("Program has shutdown");
-            } else {
-                System.out.println("Invalid input");
+                runAsGuest();
             }
-        }
+            }
         // End of the program
     }
+
+    static public void runAsAdmin() {
+        //Log in as Admin
+        if (userInput.equals("1")) {
+
+            confirmPassword();
+            printOutUserOptions("Select one of following options",
+                    Arrays.asList("Create Contacts", "Read Contacts"));
+            userInput = askUserForInput();
+
+            // Create Contact
+            if (userInput.equals("1")) {
+                contactdb.addContact();
+                id++;
+
+                // Read Contact
+            } else if (userInput.equals("2")) {
+
+                printOutSearchOptions();
+                contactdb.readContacts(askUserForInput());
+                Contact contact = contactdb.pickContact();
+
+                printOutUserOptions("Select one of following options"
+                        , Arrays.asList("Update Contact", "Delete Contact"));
+                userInput = askUserForInput();
+
+                // Update Contact
+                if (userInput.equals("1")) {
+                    contactdb.update(contact);
+
+                    // Delete Contact
+                } else if (userInput.equals("2")) {
+                    contactdb.delete(contact);
+                }
+            }
+        }
+    }
+    static public void runAsGuest() {
+        //Log in as Admin
+        if (userInput.equals("1")) {
+
+            confirmPassword();
+            printOutUserOptions("Select one of following options",
+                    Arrays.asList("Create Contacts", "Read Contacts"));
+            userInput = askUserForInput();
+
+            // Create Contact
+            if (userInput.equals("1")) {
+                contactdb.addContact();
+                id++;
+
+                // Read Contact
+            } else if (userInput.equals("2")) {
+
+                printOutSearchOptions();
+                contactdb.readContacts(askUserForInput());
+                Contact contact = contactdb.pickContact();
+
+                printOutUserOptions("Select one of following options"
+                        , Arrays.asList("Update Contact", "Delete Contact"));
+                userInput = askUserForInput();
+
+                // Update Contact
+                if (userInput.equals("1")) {
+                    contactdb.update(contact);
+
+                    // Delete Contact
+                } else if (userInput.equals("2")) {
+                    contactdb.delete(contact);
+                }
+            }
+        }
+    }
+
 
     static public String askUserForInput() {
 

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae941524-2bc0-4863-8a49-0859ecb44ddc" name="Changes" comment="apa">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-11-02_09_15_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022-11-02_09_15__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contactDB/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/contactDB/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contactDB/ContactDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/contactDB/ContactDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contactDB/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/contactDB/DataBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,8 @@
       <workItem from="1667931645130" duration="2931000" />
       <workItem from="1667935242369" duration="2377000" />
       <workItem from="1667938890255" duration="174000" />
-      <workItem from="1667978551993" duration="3463000" />
+      <workItem from="1667978551993" duration="3542000" />
+      <workItem from="1667982150774" duration="1471000" />
     </task>
     <task id="LOCAL-00001" summary="mainMenu">
       <created>1667298952064</created>
@@ -183,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667917979948</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="apa">
+      <created>1667982106542</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1667982106542</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
