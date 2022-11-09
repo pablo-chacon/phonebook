@@ -18,11 +18,20 @@ public class Application {
         printMainMenu();
         userInput = askUserForInput();
 
-        if (userInput.equals("1")) {
+        if (userInput.equals("1"))
+        {
             confirmPassword();
-            runAsAdmin();
-        } else if (userInput.equals("2")) {
-            runAsGuest();
+        }
+
+        while (true){
+
+            if (userInput.equals("1")){
+                runAsAdmin();
+            } else if (userInput.equals("2")) {
+                runAsGuest();
+            }else if (userInput.equals("3")){
+                break;
+            }
         }
 
         // End of the program
@@ -31,8 +40,6 @@ public class Application {
     static public void runAsAdmin() {
         //Log in as Admin
 
-        while (true) {
-
             printOutUserOptions("Select one of following options",
                     Arrays.asList("Create Contacts", "Read Contacts"));
             userInput = askUserForInput();
@@ -63,12 +70,10 @@ public class Application {
                 }
             }
         }
-    }
-
 
     static public void runAsGuest() {
         //Log in as Admin
-        while (true) {
+
             printOutUserOptions("Select one of following options",
                     Arrays.asList("Create Contacts", "Read Contacts"));
             userInput = askUserForInput();
@@ -83,24 +88,9 @@ public class Application {
 
                 printOutSearchOptions();
                 contactdb.readContacts(askUserForInput());
-                Contact contact = contactdb.pickContact();
 
-                printOutUserOptions("Select one of following options"
-                        , Arrays.asList("Update Contact", "Delete Contact"));
-                userInput = askUserForInput();
-
-                // Update Contact
-                if (userInput.equals("1")) {
-                    contactdb.update(contact);
-
-                    // Delete Contact
-                } else if (userInput.equals("2")) {
-                    contactdb.delete(contact);
-                }
             }
         }
-    }
-
 
     static public String askUserForInput() {
 
