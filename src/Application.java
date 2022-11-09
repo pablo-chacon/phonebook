@@ -9,30 +9,30 @@ public class Application {
     static public boolean isRunning = true;
     static public int id = 2;
     static public String userInput = "";
-    static  public ContactDataBase contactdb = new ContactDataBase();
+    static public ContactDataBase contactdb = new ContactDataBase();
 
 
     public static void main(String[] args) {
 
-
+        // Start of the program
         printMainMenu();
         userInput = askUserForInput();
 
-        // Start of the program
-        while (isRunning) {
-            if (userInput.equals("1")){
-                runAsAdmin();
-            } else if (userInput.equals("2")) {
-                runAsGuest();
-            }
-            }
+        if (userInput.equals("1")) {
+            confirmPassword();
+            runAsAdmin();
+        } else if (userInput.equals("2")) {
+            runAsGuest();
+        }
+
         // End of the program
     }
 
     static public void runAsAdmin() {
         //Log in as Admin
 
-            confirmPassword();
+        while (true) {
+
             printOutUserOptions("Select one of following options",
                     Arrays.asList("Create Contacts", "Read Contacts"));
             userInput = askUserForInput();
@@ -63,13 +63,12 @@ public class Application {
                 }
             }
         }
+    }
 
 
     static public void runAsGuest() {
         //Log in as Admin
-
-
-
+        while (true) {
             printOutUserOptions("Select one of following options",
                     Arrays.asList("Create Contacts", "Read Contacts"));
             userInput = askUserForInput();
@@ -100,6 +99,7 @@ public class Application {
                 }
             }
         }
+    }
 
 
     static public String askUserForInput() {
