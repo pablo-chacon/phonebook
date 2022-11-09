@@ -101,7 +101,7 @@ public class Application {
 
         System.out.print("Input: ");
         String userInput = sc.next();
-        if (userInput.equals("log out")) {
+        if (userInput.equals("quit")) {
             main(null);
         }
         return userInput;
