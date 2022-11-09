@@ -65,6 +65,7 @@ public class Contact {
     }
 
     public void setFname() {
+        System.out.print("First Name: ");
         this.fname = String.valueOf(sc.next());
     }
 
