@@ -17,19 +17,18 @@ public class Application {
         printMainMenu();
         userInput = askUserForInput();
 
-        if (userInput.equals("1"))
-        {
+        if (userInput.equals("1")) {
             confirmPassword();
+        } else if (userInput.equals("3")) {
+            System.exit(0);
         }
 
-        while (true){
+        while (true) {
 
-            if (userInput.equals("1")){
+            if (userInput.equals("1")) {
                 runAsAdmin();
             } else if (userInput.equals("2")) {
                 runAsGuest();
-            }else if (userInput.equals("3")){
-                break;
             }
         }
 
@@ -39,63 +38,63 @@ public class Application {
     static public void runAsAdmin() {
         //Log in as Admin
 
-            printOutUserOptions("Select one of following options",
-                    Arrays.asList("Create Contacts", "Read Contacts"));
+        printOutUserOptions("Select one of following options",
+                Arrays.asList("Create Contacts", "Read Contacts"));
+        userInput = askUserForInput();
+
+        // Create Contact
+        if (userInput.equals("1")) {
+            contactdb.addContact();
+
+
+            // Read Contact
+        } else if (userInput.equals("2")) {
+
+            printOutSearchOptions();
+            contactdb.readContacts(askUserForInput());
+            Contact contact = contactdb.pickContact();
+
+            printOutUserOptions("Select one of following options"
+                    , Arrays.asList("Update Contact", "Delete Contact"));
             userInput = askUserForInput();
 
-            // Create Contact
+            // Update Contact
             if (userInput.equals("1")) {
-                contactdb.addContact();
+                contactdb.update(contact);
 
-
-                // Read Contact
+                // Delete Contact
             } else if (userInput.equals("2")) {
-
-                printOutSearchOptions();
-                contactdb.readContacts(askUserForInput());
-                Contact contact = contactdb.pickContact();
-
-                printOutUserOptions("Select one of following options"
-                        , Arrays.asList("Update Contact", "Delete Contact"));
-                userInput = askUserForInput();
-
-                // Update Contact
-                if (userInput.equals("1")) {
-                    contactdb.update(contact);
-
-                    // Delete Contact
-                } else if (userInput.equals("2")) {
-                    contactdb.delete(contact);
-                }
-            }else {
-                System.out.println("Invalid input");
-                runAsAdmin();
+                contactdb.delete(contact);
             }
+        } else {
+            System.out.println("Invalid input");
+            runAsAdmin();
         }
+    }
 
     static public void runAsGuest() {
         //Log in as Admin
 
-            printOutUserOptions("Select one of following options",
-                    Arrays.asList("Create Contacts", "Read Contacts"));
-            userInput = askUserForInput();
+        printOutUserOptions("Select one of following options",
+                Arrays.asList("Create Contacts", "Read Contacts"));
+        userInput = askUserForInput();
 
-            // Create Contact
-            if (userInput.equals("1")) {
-                contactdb.addContact();
+        // Create Contact
+        if (userInput.equals("1")) {
+            contactdb.addContact();
 
 
-                // Read Contact
-            } else if (userInput.equals("2")) {
+            // Read Contact
+        } else if (userInput.equals("2")) {
 
-                printOutSearchOptions();
-                contactdb.readContacts(askUserForInput());
+            printOutSearchOptions();
+            contactdb.readContacts(askUserForInput());
 
-            }else {
-                System.out.print("Invalid input");
-                runAsGuest();
-            }
+        } else {
+            System.out.print("Invalid input");
+            runAsGuest();
         }
+    }
 
     static public String askUserForInput() {
 
@@ -162,7 +161,7 @@ public class Application {
                 """);
     }
 
-    static public void printOutUpdateOptions(){
+    static public void printOutUpdateOptions() {
         System.out.println("""
                 [1] first name
                 [2] last name
