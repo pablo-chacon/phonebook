@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Contact {
     static public Scanner sc = new Scanner(System.in);
 
-    public int id;
+    private int id = 2;
 
     private String fname;
     private String lname;
@@ -22,16 +22,8 @@ public class Contact {
     private String zipCode;
 
     // Huge constructor.
-    public Contact(int id) {
-        this.id = id;
-        setFname();
-        setLname();
-        setAge();
-        setPhone();
-        setStreetAddress();
-        setStreetNum();
-        setCounty();
-        setZipCode();
+    public Contact() {
+        id++;
     }
 
 
@@ -56,7 +48,8 @@ public class Contact {
                 "Street Address: " + streetAddress + '\n' +
                 "StreetNum: '" + streetNum + '\n' +
                 "County: " + county + '\n' +
-                "ZipCode: " + zipCode + '\n';
+                "ZipCode: " + zipCode + '\n'+
+                "Id: " + id + '\n';
     }
 
 
@@ -64,27 +57,24 @@ public class Contact {
         return fname;
     }
 
-    public void setFname() {
-        System.out.print("First Name: ");
-        this.fname = String.valueOf(sc.next());
+    public void setFname(String firstName) {
+        this.fname = firstName;
     }
 
     public String getLname() {
         return lname;
     }
 
-    public void setLname() {
-        System.out.print("Last name: ");
-        this.lname = String.valueOf(sc.next());
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
     public String getAge() {
         return age;
     }
 
-    public void setAge() {
-        System.out.print("Age: ");
-        this.age = String.valueOf(sc.next());
+    public void setAge(String age) {
+        this.age = age;
     }
 
     public String getPhone() {
@@ -92,8 +82,9 @@ public class Contact {
     }
 
 
-    public void setPhone() {
-        this.phone = digitsLimit();
+    public void setPhone(String phone) {
+//        this.phone = digitsLimit();
+        this.phone = phone;
     }
 
     static public String digitsLimit() {
@@ -135,27 +126,24 @@ public class Contact {
         return streetAddress;
     }
 
-    public void setStreetAddress() {
-        System.out.print("Street Address: ");
-        this.streetAddress = String.valueOf(sc.next());
+    public void setStreetAddress(String streetAddress) {
+        this.streetAddress = streetAddress;
     }
 
     public String getStreetNum() {
         return streetNum;
     }
 
-    public void setStreetNum() {
-        System.out.print("Street Number: ");
-        this.streetNum = String.valueOf(sc.next());
+    public void setStreetNum(String streetNum) {
+        this.streetNum = streetNum;
     }
 
     public String getCounty() {
         return county;
     }
 
-    public void setCounty() {
-        System.out.print("County: ");
-        this.county = String.valueOf(sc.next());
+    public void setCounty(String county) {
+        this.county = county;
 
     }
 
@@ -163,9 +151,8 @@ public class Contact {
         return zipCode;
     }
 
-    public void setZipCode() {
-        System.out.print("Zip Code: ");
-        this.zipCode = String.valueOf(sc.next());
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
 

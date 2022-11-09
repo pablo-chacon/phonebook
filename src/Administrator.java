@@ -10,11 +10,9 @@ public class Administrator implements Crud {
 
         this.userName = userName;
         this.password = password;
-//        this.isLoggedIn = isLoggedIn;
 
     this.userName = userName;
     this.password = password;
-    this.isLoggedIn = isLoggedIn;
 
     }
 
@@ -22,17 +20,12 @@ public class Administrator implements Crud {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public boolean isLoggedIn() {
         return isLoggedIn;

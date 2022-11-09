@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ContactDataBase implements DataBase<Contact>, Search {
-    static public int id = 2;
     static public Scanner sc = new Scanner(System.in);
 
     private List<Contact> contacts = new ArrayList<>();
@@ -194,12 +193,47 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         return contacts;
     }
 
+    public Contact createContact(){
+
+        Contact contact = new Contact();
+
+        System.out.print("First Name: ");
+        contact.setFname(sc.next());
+
+        System.out.print("Last Name: ");
+        contact.setLname(sc.next());
+
+        System.out.print("Age: ");
+        contact.setAge(sc.next());
+
+        System.out.print("Phone: ");
+        contact.setPhone(sc.next());
+
+        System.out.print("Street Address: ");
+        contact.setStreetAddress(sc.next());
+
+        System.out.print("Street Number");
+        contact.setStreetNum(sc.next());
+
+        System.out.print("County: ");
+        contact.setCounty(sc.next());
+
+        System.out.print("Zip Code: ");
+        contact.setZipCode(sc.next());
+
+        return contact;
+    }
+
     @Override
     public void  addContact() {
         while (true) {
-            Contact contact = new Contact(id);
-            id++;
+            Contact contact = createContact();
             contacts.add(contact);
+
+            for (int i = 0; i <contacts.size() ; i++) {
+                 Contact contact1 = contacts.get(i);
+                System.out.println(contact1.printContact());
+            }
             for (int i = 0; i < contacts.size(); i++) {
                 getContact(i);
 
@@ -223,6 +257,12 @@ public class ContactDataBase implements DataBase<Contact>, Search {
             searchByAddress();
         } else if (choice.equals("4")) {
             freeSearch();
+        }else{
+            for (int i = 0; i < contacts.size(); i++) {
+                Contact contact = contacts.get(i);
+                contact.printContact();
+            }
+
         }
     }
 
@@ -230,14 +270,14 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     @Override
     public void update(Contact contact) {
 
-        contact.setFname();
-        contact.setLname();
-        contact.setAge();
-        contact.setPhone();
-        contact.setStreetAddress();
-        contact.setStreetNum();
-        contact.setCounty();
-        contact.setZipCode();
+        contact.setFname(sc.next());
+        contact.setLname(sc.next());
+        contact.setAge(sc.next());
+        contact.setPhone(sc.next());
+        contact.setStreetAddress(sc.next());
+        contact.setStreetNum(sc.next());
+        contact.setCounty(sc.next());
+        contact.setZipCode(sc.next());
     }
 
     @Override

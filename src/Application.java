@@ -13,7 +13,7 @@ public class Application {
 
 
     public static void main(String[] args) {
-
+        
         // Start of the program
         printMainMenu();
         userInput = askUserForInput();
