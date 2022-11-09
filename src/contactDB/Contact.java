@@ -48,7 +48,7 @@ public class Contact {
                 "Street Address: " + streetAddress + '\n' +
                 "StreetNum: '" + streetNum + '\n' +
                 "County: " + county + '\n' +
-                "ZipCode: " + zipCode + '\n'+
+                "ZipCode: " + zipCode + '\n' +
                 "Id: " + id + '\n';
     }
 
@@ -109,11 +109,9 @@ public class Contact {
         boolean hasLetters = false;
 
         for (int i = 0; i < value.length(); i++) {
-            if (value.charAt(0) == '+'){
+            if (value.charAt(0) == '+') {
                 hasLetters = false;
-            }
-
-            else if (!Character.isDigit(value.charAt(i))) {
+            } else if (!Character.isDigit(value.charAt(i))) {
                 hasLetters = true;
             }
         }
@@ -170,7 +168,7 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Name: " + this.fname + " " + this.lname + " Age: " + this.age + " Street: " + this.streetAddress +
+        return "Name: " + this.fname + " " + this.lname + " Age: " + this.age + " Phone: " + this.phone + " Street: " + this.streetAddress +
                 " " + this.streetNum + " County: " + this.county + " Zip code: " + this.zipCode;
     }
 }

@@ -13,10 +13,8 @@ public class Application {
 
 
     public static void main(String[] args) {
-        
-        // Start of the program
-//        Contact contact = contactdb.getContact(0);
-//        contactdb.update(contact);
+
+        System.out.println(contactdb.getContact(0));
         printMainMenu();
         userInput = askUserForInput();
 
