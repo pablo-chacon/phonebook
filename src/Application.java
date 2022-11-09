@@ -6,14 +6,14 @@ import java.util.*;
 
 public class Application {
     static public Scanner sc = new Scanner(System.in);
-    static public int id = 2;
+    static public boolean isRunning = true;
+
     static public String userInput = "";
     static public ContactDataBase contactdb = new ContactDataBase();
 
 
     public static void main(String[] args) {
 
-        boolean isRunning = true;
         // Start of the program
         printMainMenu();
         userInput = askUserForInput();
@@ -47,7 +47,7 @@ public class Application {
             // Create Contact
             if (userInput.equals("1")) {
                 contactdb.addContact();
-                id++;
+
 
                 // Read Contact
             } else if (userInput.equals("2")) {
@@ -68,7 +68,7 @@ public class Application {
                 } else if (userInput.equals("2")) {
                     contactdb.delete(contact);
                 }
-            } else {
+            }else {
                 System.out.println("Invalid input");
                 runAsAdmin();
             }
@@ -84,7 +84,7 @@ public class Application {
             // Create Contact
             if (userInput.equals("1")) {
                 contactdb.addContact();
-                id++;
+
 
                 // Read Contact
             } else if (userInput.equals("2")) {
@@ -92,8 +92,8 @@ public class Application {
                 printOutSearchOptions();
                 contactdb.readContacts(askUserForInput());
 
-            } else {
-                System.out.println("Invalid input");
+            }else {
+                System.out.print("Invalid input");
                 runAsGuest();
             }
         }

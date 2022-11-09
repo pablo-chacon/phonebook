@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ContactDataBase implements DataBase<Contact>, Search {
+    static public int id = 2;
     static public Scanner sc = new Scanner(System.in);
 
     private List<Contact> contacts = new ArrayList<>();
@@ -196,7 +197,8 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     @Override
     public void  addContact() {
         while (true) {
-            Contact contact = new Contact(3);
+            Contact contact = new Contact(id);
+            id++;
             contacts.add(contact);
             for (int i = 0; i < contacts.size(); i++) {
                 getContact(i);

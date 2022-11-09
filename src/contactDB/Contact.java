@@ -32,8 +32,8 @@ public class Contact {
         setStreetNum();
         setCounty();
         setZipCode();
-
     }
+
 
     public Contact(int id, String fname, String lname, String age, String phone, String streetAddress, String streetNum, String county, String zipCode) {
         this.id = id;
@@ -65,7 +65,6 @@ public class Contact {
     }
 
     public void setFname() {
-        System.out.print("First name: ");
         this.fname = String.valueOf(sc.next());
     }
 
