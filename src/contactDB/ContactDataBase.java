@@ -97,8 +97,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
                 break;
             }
         }
-
-
     }
 
     @Override
@@ -196,7 +194,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
     public Contact createContact(){
         Contact contact = new Contact();
-
 
         System.out.print("First Name: ");
         contact.setFname(sc.next());

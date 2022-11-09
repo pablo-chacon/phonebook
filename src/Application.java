@@ -14,7 +14,6 @@ public class Application {
 
     public static void main(String[] args) {
 
-        System.out.println(contactdb.getContact(0));
         printMainMenu();
         userInput = askUserForInput();
 
@@ -102,8 +101,8 @@ public class Application {
 
         System.out.print("Input: ");
         String userInput = sc.next();
-        if (userInput.equals("quite")) {
-            System.exit(0);
+        if (userInput.equals("log out")) {
+            main(null);
         }
         return userInput;
     }
@@ -160,6 +159,13 @@ public class Application {
                 [2] Search by last name
                 [3] Search by Street address
                 [4] Free search
+                """);
+    }
+
+    static public void printOutUpdateOptions(){
+        System.out.println("""
+                [1] first name
+                [2] last name
                 """);
     }
 

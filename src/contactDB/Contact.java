@@ -11,7 +11,6 @@ public class Contact {
     static public Scanner sc = new Scanner(System.in);
 
     private int id = 2;
-
     private String fname;
     private String lname;
     private String age;
