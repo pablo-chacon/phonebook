@@ -7,9 +7,9 @@ public interface DataBase<Contact> {
 
     List<Contact> getAll();
 
-    Contact addContact(Contact contact);
+    void addContact();
 
-    void update(Contact contact, String[] params);
+    void update(Contact contact);
 
     void delete(Contact contact);
 }

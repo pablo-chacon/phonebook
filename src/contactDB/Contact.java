@@ -121,11 +121,9 @@ public class Contact {
 
             if (!Character.isDigit(value.charAt(i))) {
                 hasLetters = true;
-            } else if (value.charAt(0) == '+') {
-                hasLetters = false;
-            } else
-                hasLetters = false;
+            }
         }
+
         return hasLetters;
     }
 
@@ -154,7 +152,7 @@ public class Contact {
 
     public void setCounty() {
         System.out.print("County: ");
-        this.zipCode = String.valueOf(sc.next());
+        this.county = String.valueOf(sc.next());
 
     }
 

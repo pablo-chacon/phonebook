@@ -55,7 +55,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
                 for (Contact findContact : findContacts) {
                     int id = findContact.getId();
                     System.out.println("[" + (id) + "] " + findContact);
-
                 }
 
                 break;
@@ -64,6 +63,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
 
     }
+
     @Override
     public void searchByLastName() {
 
@@ -130,7 +130,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
                 break;
             }
         }
-
     }
 
     @Override
@@ -146,7 +145,8 @@ public class ContactDataBase implements DataBase<Contact>, Search {
                 Contact contact = contacts.get(i);
 
                 for (int j = 0; j < 8; j++) {
-                    String text = contact.groupOfStrings().get(j).toLowerCase();
+
+                    String text = contact.groupOfStrings().get(j);
                     try {
                         text = text.substring(0, letters);
 
@@ -175,6 +175,14 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
     }
 
+    public Contact pickContact(){
+        System.out.print("Pick a contact: ");
+        int id = sc.nextInt();
+        return getContact(id);
+
+    }
+
+
     @Override
     public Contact getContact(int id) {
         return contacts.get(id);
@@ -186,15 +194,43 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     }
 
     @Override
-    public Contact addContact(Contact contact) {
-        contacts.add(contact);
-        return contact;
+    public void  addContact() {
+        while (true) {
+            Contact contact = new Contact(3);
+            contacts.add(contact);
+            for (int i = 0; i < contacts.size(); i++) {
+                getContact(i);
+
+            }
+            System.out.print("\nCreate another Contact (y/n): ");
+            String userInput = sc.next();
+
+            if (userInput.equals("n")) {
+                break;
+            }
+        }
     }
 
+    public void readContacts(String choice) {
+
+        if (choice.equals("1")) {
+            searchByFirstName();
+        } else if (choice.equals("2")) {
+            searchByLastName();
+        } else if (choice.equals("3")) {
+            searchByAddress();
+        } else if (choice.equals("4")) {
+            freeSearch();
+        }
+    }
+
+
     @Override
-    public void update(Contact contact, String[] params) {
+    public void update(Contact contact) {
+
         contact.setFname();
         contact.setLname();
+        contact.setAge();
         contact.setPhone();
         contact.setStreetAddress();
         contact.setStreetNum();
