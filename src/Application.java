@@ -31,7 +31,6 @@ public class Application {
 
     static public void runAsAdmin() {
         //Log in as Admin
-        if (userInput.equals("1")) {
 
             confirmPassword();
             printOutUserOptions("Select one of following options",
@@ -64,12 +63,13 @@ public class Application {
                 }
             }
         }
-    }
+
+
     static public void runAsGuest() {
         //Log in as Admin
-        if (userInput.equals("1")) {
 
-            confirmPassword();
+
+
             printOutUserOptions("Select one of following options",
                     Arrays.asList("Create Contacts", "Read Contacts"));
             userInput = askUserForInput();
@@ -100,7 +100,6 @@ public class Application {
                 }
             }
         }
-    }
 
 
     static public String askUserForInput() {
