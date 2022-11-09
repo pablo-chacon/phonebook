@@ -23,7 +23,7 @@ public class Contact {
 
     // Huge constructor.
     public Contact() {
-        id++;
+        id = id + 1;
     }
 
 

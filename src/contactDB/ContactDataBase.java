@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class ContactDataBase implements DataBase<Contact>, Search {
     static public Scanner sc = new Scanner(System.in);
+    static public int id = 2;
 
     private List<Contact> contacts = new ArrayList<>();
 
@@ -194,8 +195,8 @@ public class ContactDataBase implements DataBase<Contact>, Search {
     }
 
     public Contact createContact(){
-
         Contact contact = new Contact();
+
 
         System.out.print("First Name: ");
         contact.setFname(sc.next());
@@ -220,6 +221,11 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
         System.out.print("Zip Code: ");
         contact.setZipCode(sc.next());
+
+        id ++;
+        contact.setId(id);
+
+
 
         return contact;
     }
