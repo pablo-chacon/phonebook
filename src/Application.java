@@ -6,7 +6,6 @@ import java.util.*;
 
 public class Application {
     static public Scanner sc = new Scanner(System.in);
-    static public boolean isRunning = true;
     static public int id = 2;
     static public String userInput = "";
     static public ContactDataBase contactdb = new ContactDataBase();
@@ -14,6 +13,7 @@ public class Application {
 
     public static void main(String[] args) {
 
+        boolean isRunning = true;
         // Start of the program
         printMainMenu();
         userInput = askUserForInput();
@@ -68,6 +68,9 @@ public class Application {
                 } else if (userInput.equals("2")) {
                     contactdb.delete(contact);
                 }
+            } else {
+                System.out.println("Invalid input");
+                runAsAdmin();
             }
         }
 
@@ -89,6 +92,9 @@ public class Application {
                 printOutSearchOptions();
                 contactdb.readContacts(askUserForInput());
 
+            } else {
+                System.out.println("Invalid input");
+                runAsGuest();
             }
         }
 
