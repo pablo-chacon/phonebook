@@ -17,11 +17,11 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
     public void storingDefaultContacts() {
         Contact contact1 = new Contact(0, "Marcus", "Groth", "23", "0845678954",
-                "Skolvägen", "3", "Country", "09854");
-        Contact contact2 = new Contact(1, "Lisa", "Groth", "23", "0845678954",
-                "Marcusvägen", "3", "Country", "09854");
-        Contact contact3 = new Contact(2, "lasse", "Marcusson", "23", "0845678954",
-                "Skolvägen", "3", "Country", "09854");
+                "Eriksgatan", "3", "Norrbotten", "98542");
+        Contact contact2 = new Contact(1, "Lisa", "Eriksson", "30", "0845678954",
+                "Ladugårdsvägen", "3", "Skåne", "98543");
+        Contact contact3 = new Contact(2, "Erik", "Johansson", "50", "0845678954",
+                "stadsgatan", "3", "Uppsala", "98541");
         contacts.add(contact1);
         contacts.add(contact2);
         contacts.add(contact3);
@@ -57,22 +57,30 @@ public class ContactDataBase implements DataBase<Contact>, Search {
                     int id = findContact.getId();
                     System.out.println("[" + (id) + "] " + findContact);
                 }
-
                 break;
             }
         }
-
-
     }
 
     @Override
     public void searchByLastName() {
 
+
         while (true) {
+            List<String> firstNames = new ArrayList<>();
+            for (int i = 0; i < 3; i++) {
+                firstNames.add(contacts.get(0).getFname());
+            }
+            for (String firstName : firstNames) {
+                System.out.println(firstName);
+            }
+
+
 
             List<Contact> findContacts = new ArrayList<>();
             System.out.print("Enter a last name: ");
             String userInput = sc.next().toLowerCase();
+
 
             for (int i = 0; i < contacts.size(); i++) {
                 Contact contact = contacts.get(i);
@@ -98,6 +106,9 @@ public class ContactDataBase implements DataBase<Contact>, Search {
             }
         }
     }
+
+
+
 
     @Override
     public void searchByAddress() {
@@ -181,7 +192,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
     }
 
-
     @Override
     public Contact getContact(int id) {
         return contacts.get(id);
@@ -222,8 +232,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         id ++;
         contact.setId(id);
 
-
-
         return contact;
     }
 
@@ -233,10 +241,10 @@ public class ContactDataBase implements DataBase<Contact>, Search {
             Contact contact = createContact();
             contacts.add(contact);
 
-            for (int i = 0; i <contacts.size() ; i++) {
-                 Contact contact1 = contacts.get(i);
-                System.out.println(contact1.printContact());
-            }
+//            for (int i = 0; i <contacts.size() ; i++) {
+//                 Contact contact1 = contacts.get(i);
+//                System.out.println(contact1);
+//            }
             for (int i = 0; i < contacts.size(); i++) {
                 getContact(i);
 
@@ -263,9 +271,8 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         }else{
             for (int i = 0; i < contacts.size(); i++) {
                 Contact contact = contacts.get(i);
-                contact.printContact();
+                System.out.println(contact);
             }
-
         }
     }
 

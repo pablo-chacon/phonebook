@@ -1,7 +1,6 @@
 package contactDB;
 // Contact POJO.
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -38,20 +37,6 @@ public class Contact {
         this.zipCode = zipCode;
     }
 
-    public String printContact() {
-
-        return "\nFirst Name: " + fname + '\n' +
-                "Last Name: " + lname + '\n' +
-                "Age: " + age + '\n' +
-                "Phone: " + phone + '\n' +
-                "Street Address: " + streetAddress + '\n' +
-                "StreetNum: '" + streetNum + '\n' +
-                "County: " + county + '\n' +
-                "ZipCode: " + zipCode + '\n' +
-                "Id: " + id + '\n';
-    }
-
-
     public String getFname() {
         return fname;
     }
@@ -68,21 +53,11 @@ public class Contact {
         this.lname = lname;
     }
 
-    public String getAge() {
-        return age;
-    }
-
     public void setAge(String age) {
         this.age = age;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-
     public void setPhone(String phone) {
-//        this.phone = digitsLimit();
         this.phone = phone;
     }
 
@@ -118,7 +93,6 @@ public class Contact {
         return hasLetters;
     }
 
-
     public String getStreetAddress() {
         return streetAddress;
     }
@@ -127,25 +101,14 @@ public class Contact {
         this.streetAddress = streetAddress;
     }
 
-    public String getStreetNum() {
-        return streetNum;
-    }
 
     public void setStreetNum(String streetNum) {
         this.streetNum = streetNum;
     }
 
-    public String getCounty() {
-        return county;
-    }
-
     public void setCounty(String county) {
         this.county = county;
 
-    }
-
-    public String getZipCode() {
-        return zipCode;
     }
 
     public void setZipCode(String zipCode) {
@@ -168,6 +131,6 @@ public class Contact {
     @Override
     public String toString() {
         return "Name: " + this.fname + " " + this.lname + " Age: " + this.age + " Phone: " + this.phone + " Street: " + this.streetAddress +
-                " " + this.streetNum + " County: " + this.county + " Zip code: " + this.zipCode;
+                " " + this.streetNum + " County: " + this.county + " Zip code: " + this.zipCode + " ID: " + this.id;
     }
 }
