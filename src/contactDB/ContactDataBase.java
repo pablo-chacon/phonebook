@@ -146,7 +146,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
                 for (int j = 0; j < 8; j++) {
 
-                    String text = contact.groupOfStrings().get(j);
+                    String text = contact.groupOfStrings().get(j).toLowerCase();
                     try {
                         text = text.substring(0, letters);
 
