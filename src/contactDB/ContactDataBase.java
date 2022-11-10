@@ -21,7 +21,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         Contact contact2 = new Contact(1, "Lisa", "Eriksson", "30", "0845678954",
                 "Ladugårdsvägen", "3", "Skåne", "98543");
         Contact contact3 = new Contact(2, "Erik", "Johansson", "50", "0845678954",
-                "stadsgatan", "3", "Uppsala", "98541");
+                "Stadsgatan", "3", "Uppsala", "98541");
         contacts.add(contact1);
         contacts.add(contact2);
         contacts.add(contact3);
@@ -32,7 +32,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
         while (true) {
 
-            boolean findContent = false;
             List<Contact> findContacts = new ArrayList<>();
 
             System.out.print("Enter a first name: ");
@@ -67,33 +66,24 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
 
         while (true) {
-            List<String> firstNames = new ArrayList<>();
-            for (int i = 0; i < 3; i++) {
-                firstNames.add(contacts.get(0).getFname());
-            }
-            for (String firstName : firstNames) {
-                System.out.println(firstName);
-            }
-
-
 
             List<Contact> findContacts = new ArrayList<>();
+
             System.out.print("Enter a last name: ");
             String userInput = sc.next().toLowerCase();
 
-
             for (int i = 0; i < contacts.size(); i++) {
+
                 Contact contact = contacts.get(i);
                 String lastName = contact.getLname().toLowerCase();
 
-
                 if (userInput.equals(lastName)) {
+
                     int id = contact.getId();
                     Contact findContact = contacts.get(id);
                     findContacts.add(findContact);
                 }
             }
-
             if (findContacts.isEmpty()) {
                 System.out.println("Invalid search");
             } else {
@@ -101,7 +91,6 @@ public class ContactDataBase implements DataBase<Contact>, Search {
                     int id = findContact.getId();
                     System.out.println("[" + (id) + "] " + findContact);
                 }
-
                 break;
             }
         }
