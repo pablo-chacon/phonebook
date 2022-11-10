@@ -27,6 +27,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         contacts.add(contact3);
     }
 
+    
     @Override
     public void searchByFirstName() {
 
@@ -61,9 +62,9 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         }
     }
 
+    
     @Override
     public void searchByLastName() {
-
 
         while (true) {
 
@@ -96,9 +97,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         }
     }
 
-
-
-
+    
     @Override
     public void searchByAddress() {
 
@@ -131,6 +130,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         }
     }
 
+    
     @Override
     public void freeSearch() {
 
@@ -174,6 +174,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
     }
 
+    
     public Contact pickContact(){
         System.out.print("Pick a contact: ");
         int id = sc.nextInt();
@@ -181,6 +182,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
 
     }
 
+    
     @Override
     public Contact getContact(int id) {
         return contacts.get(id);
@@ -224,16 +226,13 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         return contact;
     }
 
+    
     @Override
     public void  addContact() {
         while (true) {
             Contact contact = createContact();
             contacts.add(contact);
 
-//            for (int i = 0; i <contacts.size() ; i++) {
-//                 Contact contact1 = contacts.get(i);
-//                System.out.println(contact1);
-//            }
             for (int i = 0; i < contacts.size(); i++) {
                 getContact(i);
 
@@ -247,6 +246,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         }
     }
 
+    
     public void readContacts(String choice) {
 
         if (choice.equals("1")) {
@@ -265,7 +265,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         }
     }
 
-
+    
     @Override
     public void update(Contact contact) {
 
@@ -294,6 +294,7 @@ public class ContactDataBase implements DataBase<Contact>, Search {
         contact.setZipCode(sc.next());
     }
 
+    
     @Override
     public void delete(Contact contact) {
         contacts.remove(contact);
