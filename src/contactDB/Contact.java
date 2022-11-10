@@ -19,12 +19,12 @@ public class Contact {
     private String county;
     private String zipCode;
 
-    // Huge constructor.
+    
     public Contact() {
         id = id + 1;
     }
 
-
+    // Huge constructor.
     public Contact(int id, String fname, String lname, String age, String phone, String streetAddress, String streetNum, String county, String zipCode) {
         this.id = id;
         this.fname = fname;
